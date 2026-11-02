@@ -1,0 +1,185 @@
+{
+  "anomaly": {
+    "models": {
+      "Isolation Forest": {
+        "label": "within learned pattern",
+        "anomaly_score": -0.11337448647810516
+      },
+      "One-Class SVM": {
+        "label": "within learned pattern",
+        "anomaly_score": -0.38815017155854925
+      },
+      "LOF": {
+        "label": "within learned pattern",
+        "anomaly_score": -0.5049866803794086
+      }
+    },
+    "unusual_parameter_deviations": [
+      {
+        "parameter": "SED-E",
+        "absolute_standardized_deviation_from_training_median": 1.4089446001818797
+      },
+      {
+        "parameter": "Q-E",
+        "absolute_standardized_deviation_from_training_median": 1.1804763548520951
+      },
+      {
+        "parameter": "PH-P",
+        "absolute_standardized_deviation_from_training_median": 0.8753993020349468
+      },
+      {
+        "parameter": "PH-E",
+        "absolute_standardized_deviation_from_training_median": 0.8356409640298224
+      },
+      {
+        "parameter": "SED-P",
+        "absolute_standardized_deviation_from_training_median": 0.7340257182895379
+      }
+    ],
+    "explanation_note": "Large deviations are context only; they do not establish a cause."
+  },
+  "prediction": {
+    "PH-S": 7.6981312607060275,
+    "DBO-S": 17.400062255205114,
+    "DQO-S": 84.17073599997356,
+    "SS-S": 24.07937393140848
+  },
+  "explanation": {
+    "available": false,
+    "reason": "Install SHAP and matplotlib to generate explanations.",
+    "contributions": {}
+  },
+  "recommendation": {
+    "detected_condition": "No model flag for unusual input pattern",
+    "anomaly_results": {
+      "models": {
+        "Isolation Forest": {
+          "label": "within learned pattern",
+          "anomaly_score": -0.11337448647810516
+        },
+        "One-Class SVM": {
+          "label": "within learned pattern",
+          "anomaly_score": -0.38815017155854925
+        },
+        "LOF": {
+          "label": "within learned pattern",
+          "anomaly_score": -0.5049866803794086
+        }
+      },
+      "unusual_parameter_deviations": [
+        {
+          "parameter": "SED-E",
+          "absolute_standardized_deviation_from_training_median": 1.4089446001818797
+        },
+        {
+          "parameter": "Q-E",
+          "absolute_standardized_deviation_from_training_median": 1.1804763548520951
+        },
+        {
+          "parameter": "PH-P",
+          "absolute_standardized_deviation_from_training_median": 0.8753993020349468
+        },
+        {
+          "parameter": "PH-E",
+          "absolute_standardized_deviation_from_training_median": 0.8356409640298224
+        },
+        {
+          "parameter": "SED-P",
+          "absolute_standardized_deviation_from_training_median": 0.7340257182895379
+        }
+      ],
+      "explanation_note": "Large deviations are context only; they do not establish a cause."
+    },
+    "predicted_final_quality": {
+      "PH-S": 7.6981312607060275,
+      "DBO-S": 17.400062255205114,
+      "DQO-S": 84.17073599997356,
+      "SS-S": 24.07937393140848
+    },
+    "outside_configured_target_bands": {},
+    "important_SHAP_contributors": {},
+    "digital_twin_comparison": {
+      "scenario": "current",
+      "predictions": {
+        "PH-S": 7.6981312607060275,
+        "DBO-S": 17.400062255205114,
+        "DQO-S": 84.17073599997356,
+        "SS-S": 24.07937393140848
+      },
+      "distance_score": 0.0,
+      "best_vs_current": "no tested scenario improves on the current prediction"
+    },
+    "possible_operator_action": "Review the displayed process measurements and relevant treatment stage against plant procedures; confirm any action with an authorized operator.",
+    "limitations": "Predictions and scenario rankings are exploratory. SHAP describes model attribution; anomaly scores and contributions do not establish faults or root causes. Configured bands are demonstration settings, not regulatory limits."
+  },
+  "top_scenarios": [
+    {
+      "scenario": "current",
+      "changes": {},
+      "score": 0.0,
+      "prediction": {
+        "PH-S": 7.6981312607060275,
+        "DBO-S": 17.400062255205114,
+        "DQO-S": 84.17073599997356,
+        "SS-S": 24.07937393140848
+      },
+      "interpretation": "Model-based comparison requiring operator review."
+    },
+    {
+      "scenario": "PH-D lower",
+      "changes": {
+        "PH-D": 7.72
+      },
+      "score": 0.0,
+      "prediction": {
+        "PH-S": 7.645422427051902,
+        "DBO-S": 17.400062255205114,
+        "DQO-S": 85.61471633038663,
+        "SS-S": 24.07937393140848
+      },
+      "interpretation": "Model-based comparison requiring operator review."
+    },
+    {
+      "scenario": "PH-D higher",
+      "changes": {
+        "PH-D": 7.88
+      },
+      "score": 0.0,
+      "prediction": {
+        "PH-S": 7.750840094360152,
+        "DBO-S": 17.400062255205114,
+        "DQO-S": 83.39499970472964,
+        "SS-S": 21.171774094275104
+      },
+      "interpretation": "Model-based comparison requiring operator review."
+    },
+    {
+      "scenario": "PH-E lower",
+      "changes": {
+        "PH-E": 7.6000000000000005
+      },
+      "score": 0.0,
+      "prediction": {
+        "PH-S": 7.704061100211622,
+        "DBO-S": 17.400062255205114,
+        "DQO-S": 84.17073599997356,
+        "SS-S": 24.07937393140848
+      },
+      "interpretation": "Model-based comparison requiring operator review."
+    },
+    {
+      "scenario": "PH-E higher",
+      "changes": {
+        "PH-E": 7.8
+      },
+      "score": 0.0,
+      "prediction": {
+        "PH-S": 7.692201421200432,
+        "DBO-S": 17.400062255205114,
+        "DQO-S": 84.17073599997356,
+        "SS-S": 24.07937393140848
+      },
+      "interpretation": "Model-based comparison requiring operator review."
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+OPERATOR RECOMMENDATION
+DETECTED CONDITION: No model flag for unusual input pattern
+PREDICTED WATER QUALITY:
+  PH-S: 7.696
+  DBO-S: 17.241
+  DQO-S: 83.968
+  SS-S: 23.806
+IMPORTANT PARAMETERS:
+  SED-E: 1.41 SD from training median
+  Q-E: 1.18 SD from training median
+  PH-P: 0.88 SD from training median
+  PH-E: 0.84 SD from training median
+  SED-P: 0.73 SD from training median
+SHAP EXPLANATION:
+  PH-S: PH-D -0.013, SSV-P -0.006, ZN-E +0.006
+  DBO-S: DBO-D -0.928, SSV-D -0.612, DBO-P +0.569
+  DQO-S: DQO-D -3.429, DQO-E +1.916, DBO-E -1.457
+  SS-S: SED-E +2.061, SSV-P +1.866, PH-D +1.329
+DIGITAL TWIN FINDING:
+  Top-ranked scenario: current (score 0.0000); acceptable=True.
+POSSIBLE OPERATOR ACTION:
+  Review the displayed process measurements and relevant treatment stage against plant procedures; confirm any action with an authorized operator.
+VALIDATION NOTE:
+  Predictions and scenario rankings are exploratory. SHAP describes model attribution; anomaly scores and contributions do not establish faults or root causes. Configured bands are demonstration settings, not regulatory limits.
+
+SYNTHETIC AGGREGATE REVIEW (600 rows; simulation only):
+Review triggers: 170; no configured trigger: 430.
+Anomaly-vote record distribution: {"0": 504, "1": 49, "2": 25, "3": 22}
+Predictions outside demonstration bands: {"PH-S": 0, "DBO-S": 88, "DQO-S": 24, "SS-S": 19}
+Per-record triggering flags, top input deviations, predictions and suggestions are in synthetic_operator_recommendations.csv. Counts are not verified fault accuracy.

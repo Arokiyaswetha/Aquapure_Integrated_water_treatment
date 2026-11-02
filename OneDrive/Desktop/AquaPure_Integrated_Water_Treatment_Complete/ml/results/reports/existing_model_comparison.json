@@ -1,0 +1,70 @@
+{
+  "current_sklearn_version": "1.5.2",
+  "legacy_models": {
+    "PH-S": {
+      "status": "scored on same chronological held-out records",
+      "metrics": {
+        "MAE": 0.11266301133340294,
+        "RMSE": 0.13810249242258427,
+        "R2": 0.0877814122508983,
+        "records": 74
+      },
+      "feature_count": 10,
+      "load_warnings": [
+        "Trying to unpickle estimator Lasso from version 1.9.1 when using version 1.5.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:\nhttps://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations",
+        "Trying to unpickle estimator Pipeline from version 1.9.1 when using version 1.5.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:\nhttps://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations",
+        "Trying to unpickle estimator SimpleImputer from version 1.9.1 when using version 1.5.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:\nhttps://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations",
+        "Trying to unpickle estimator StandardScaler from version 1.9.1 when using version 1.5.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:\nhttps://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations"
+      ]
+    },
+    "DBO-S": {
+      "status": "scored on same chronological held-out records",
+      "metrics": {
+        "MAE": 8.388088444111172,
+        "RMSE": 18.11691780668079,
+        "R2": -0.019588286485559214,
+        "records": 74
+      },
+      "feature_count": 10,
+      "load_warnings": [
+        "Trying to unpickle estimator DecisionTreeRegressor from version 1.9.1 when using version 1.5.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:\nhttps://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations",
+        "Trying to unpickle estimator Pipeline from version 1.9.1 when using version 1.5.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:\nhttps://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations",
+        "Trying to unpickle estimator RandomForestRegressor from version 1.9.1 when using version 1.5.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:\nhttps://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations",
+        "Trying to unpickle estimator SimpleImputer from version 1.9.1 when using version 1.5.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:\nhttps://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations"
+      ]
+    },
+    "DQO-S": {
+      "status": "scored on same chronological held-out records",
+      "metrics": {
+        "MAE": 29.123594955741854,
+        "RMSE": 46.982352960171994,
+        "R2": 0.14925817192410074,
+        "records": 74
+      },
+      "feature_count": 22,
+      "load_warnings": [
+        "Trying to unpickle estimator DecisionTreeRegressor from version 1.9.1 when using version 1.5.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:\nhttps://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations",
+        "Trying to unpickle estimator DummyRegressor from version 1.9.1 when using version 1.5.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:\nhttps://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations",
+        "Trying to unpickle estimator GradientBoostingRegressor from version 1.9.1 when using version 1.5.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:\nhttps://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations",
+        "Trying to unpickle estimator Pipeline from version 1.9.1 when using version 1.5.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:\nhttps://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations",
+        "Trying to unpickle estimator SimpleImputer from version 1.9.1 when using version 1.5.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:\nhttps://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations"
+      ]
+    },
+    "SS-S": {
+      "status": "scored on same chronological held-out records",
+      "metrics": {
+        "MAE": 8.560082835120124,
+        "RMSE": 15.10032336973595,
+        "R2": -0.02933022760461479,
+        "records": 74
+      },
+      "feature_count": 22,
+      "load_warnings": [
+        "Trying to unpickle estimator Pipeline from version 1.9.1 when using version 1.5.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:\nhttps://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations",
+        "Trying to unpickle estimator SimpleImputer from version 1.9.1 when using version 1.5.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:\nhttps://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations",
+        "[20:23:19] WARNING: C:\\actions-runner\\_work\\xgboost\\xgboost\\src\\data\\../common/error_msg.h:83: If you are loading a serialized model (like pickle in Python, RDS in R) or\nconfiguration generated by an older version of XGBoost, please export the model by calling\n`Booster.save_model` from that version first, then load it back in current version. See:\n\n    https://xgboost.readthedocs.io/en/stable/tutorials/saving_model.html\n\nfor more details about differences between saving model and serializing.\n"
+      ]
+    }
+  },
+  "interpretation": "Reference comparison only; legacy artifacts are not used by the new workflow."
+}

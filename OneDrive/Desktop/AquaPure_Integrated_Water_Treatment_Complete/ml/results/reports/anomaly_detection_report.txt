@@ -1,0 +1,21 @@
+ANOMALY DETECTION REPORT
+All models are unsupervised. The dataset labels are not reconstructed or treated as verified fault ground truth.
+A model flag identifies a pattern unlike the training distribution; it does not prove a plant fault.
+
+Latest selected record:
+Isolation Forest: within learned pattern; anomaly_score=-0.113374
+One-Class SVM: within learned pattern; anomaly_score=-0.388150
+LOF: within learned pattern; anomaly_score=-0.504987
+Largest standardized deviations:
+SED-E: 1.409 training standard deviations
+Q-E: 1.180 training standard deviations
+PH-P: 0.875 training standard deviations
+PH-E: 0.836 training standard deviations
+SED-P: 0.734 training standard deviations
+
+SYNTHETIC COMPARISON (not verified fault accuracy):
+Isolation Forest: 46/600 flagged (7.7%); validation rate=7.6%; pairwise agreement=92.6%
+One-Class SVM: 85/600 flagged (14.2%); validation rate=17.7%; pairwise agreement=90.3%
+LOF: 34/600 flagged (5.7%); validation rate=7.6%; pairwise agreement=92.4%
+All-model consensus=22; union=96.
+Isolation Forest retained: validation and synthetic flag rates are not extreme, the rate shift is within 15 percentage points, and mean pairwise agreement is at least 70%. This supports only provisional stability/suitability, not fault accuracy.

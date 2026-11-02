@@ -1,0 +1,1862 @@
+{
+  "PH-S": {
+    "selected_model": "Lasso Regression",
+    "feature_set": "selected",
+    "selection_method": "SelectKBest(mutual_info_regression)",
+    "selected_features": [
+      "PH-D",
+      "PH-E",
+      "DBO-D",
+      "PH-P",
+      "DQO-E",
+      "SSV-D",
+      "SSV-P",
+      "DBO-P",
+      "ZN-E",
+      "SSV-E"
+    ],
+    "feature_ranking": {
+      "PH-D": {
+        "correlation_abs": 0.46544864542717485,
+        "mutual_information": 0.2989873277738915,
+        "selected_kbest": true,
+        "random_forest_importance": 0.2971002680503699
+      },
+      "DQO-D": {
+        "correlation_abs": 0.22367945106285742,
+        "mutual_information": 0.02138434218486962,
+        "selected_kbest": false,
+        "random_forest_importance": 0.10948039570157982
+      },
+      "SSV-P": {
+        "correlation_abs": 0.18643590574593796,
+        "mutual_information": 0.048917463402294636,
+        "selected_kbest": true,
+        "random_forest_importance": 0.0962053182010427
+      },
+      "SSV-D": {
+        "correlation_abs": 0.1827629828178798,
+        "mutual_information": 0.08239004752925627,
+        "selected_kbest": true,
+        "random_forest_importance": 0.04554451457407628
+      },
+      "SSV-E": {
+        "correlation_abs": 0.14875810877115625,
+        "mutual_information": 0.028981606471865096,
+        "selected_kbest": true,
+        "random_forest_importance": 0.043168341704105696
+      },
+      "Q-E": {
+        "correlation_abs": 0.10211159052894557,
+        "mutual_information": 0.0,
+        "selected_kbest": false,
+        "random_forest_importance": 0.03972061716086456
+      },
+      "DBO-D": {
+        "correlation_abs": 0.2047189675519479,
+        "mutual_information": 0.10432762697502129,
+        "selected_kbest": true,
+        "random_forest_importance": 0.039552000904668705
+      },
+      "SS-D": {
+        "correlation_abs": 0.008554160550896113,
+        "mutual_information": 0.003812686419503386,
+        "selected_kbest": false,
+        "random_forest_importance": 0.034512871458591714
+      },
+      "SED-D": {
+        "correlation_abs": 0.04805514122237792,
+        "mutual_information": 0.0,
+        "selected_kbest": false,
+        "random_forest_importance": 0.03335353485052759
+      },
+      "DBO-P": {
+        "correlation_abs": 0.06793337178165042,
+        "mutual_information": 0.046419438117637934,
+        "selected_kbest": true,
+        "random_forest_importance": 0.030513125221250215
+      },
+      "ZN-E": {
+        "correlation_abs": 0.09667701987909288,
+        "mutual_information": 0.040209513999187596,
+        "selected_kbest": true,
+        "random_forest_importance": 0.029594848735197268
+      },
+      "SS-P": {
+        "correlation_abs": 0.07082725139282614,
+        "mutual_information": 0.0,
+        "selected_kbest": false,
+        "random_forest_importance": 0.022876623661946822
+      },
+      "SED-E": {
+        "correlation_abs": 0.0106912236230846,
+        "mutual_information": 0.0,
+        "selected_kbest": false,
+        "random_forest_importance": 0.022578100083961983
+      },
+      "DQO-E": {
+        "correlation_abs": 0.0773591399483991,
+        "mutual_information": 0.09490480674695068,
+        "selected_kbest": true,
+        "random_forest_importance": 0.021932399657646894
+      },
+      "DBO-E": {
+        "correlation_abs": 0.06555519621644597,
+        "mutual_information": 0.013235077829952147,
+        "selected_kbest": false,
+        "random_forest_importance": 0.020984749284971953
+      },
+      "SS-E": {
+        "correlation_abs": 0.08904427877574335,
+        "mutual_information": 0.0,
+        "selected_kbest": false,
+        "random_forest_importance": 0.0209830425269259
+      },
+      "COND-D": {
+        "correlation_abs": 0.03919180946006265,
+        "mutual_information": 0.010531126126957169,
+        "selected_kbest": false,
+        "random_forest_importance": 0.02096062066417214
+      },
+      "PH-P": {
+        "correlation_abs": 0.364825103382555,
+        "mutual_information": 0.09949779374067624,
+        "selected_kbest": true,
+        "random_forest_importance": 0.01800491288595641
+      },
+      "COND-P": {
+        "correlation_abs": 0.06636568242620898,
+        "mutual_information": 0.0,
+        "selected_kbest": false,
+        "random_forest_importance": 0.015423790052657843
+      },
+      "COND-E": {
+        "correlation_abs": 0.05539611944361536,
+        "mutual_information": 0.0,
+        "selected_kbest": false,
+        "random_forest_importance": 0.01385983298053772
+      },
+      "SED-P": {
+        "correlation_abs": 0.05649246980759614,
+        "mutual_information": 0.0,
+        "selected_kbest": false,
+        "random_forest_importance": 0.012180438317509581
+      },
+      "PH-E": {
+        "correlation_abs": 0.32438501044632795,
+        "mutual_information": 0.11528553156448362,
+        "selected_kbest": true,
+        "random_forest_importance": 0.01146965332143835
+      }
+    },
+    "validation_metrics": {
+      "MAE": 0.0767050682501008,
+      "RMSE": 0.10988410506164294,
+      "R2": 0.33465426665564324
+    },
+    "test_metrics": {
+      "MAE": 0.11747464118200796,
+      "RMSE": 0.14549201170938733,
+      "R2": 0.0684739608938314
+    },
+    "train_metrics": {
+      "MAE": 0.10636872878731522,
+      "RMSE": 0.16487366484412794,
+      "R2": 0.3303851401638279
+    },
+    "generalization_gap": {
+      "MAE_validation_minus_train": -0.02966366053721442,
+      "R2_train_minus_validation": -0.004269126491815323
+    },
+    "mean_baseline_test_metrics": {
+      "MAE": 0.12184181462917344,
+      "RMSE": 0.15102628324968576,
+      "R2": -0.0037412459966814637
+    },
+    "mean_baseline_validation_metrics": {
+      "MAE": 0.09617501375894384,
+      "RMSE": 0.14854929280578588,
+      "R2": -0.21595863875447208
+    },
+    "mean_baseline_training_metrics": {
+      "MAE": 0.1428875236294897,
+      "RMSE": 0.20148315844753928,
+      "R2": 0.0
+    },
+    "validation_target_std": 0.13557431901113384,
+    "chronological_target_distribution": {
+      "train": {
+        "mean": 7.719565217391305,
+        "std": 0.20175747192848073
+      },
+      "validation": {
+        "mean": 7.6569620253164565,
+        "std": 0.13557431901113384
+      },
+      "test": {
+        "mean": 7.717721518987341,
+        "std": 0.1517077940891855
+      }
+    },
+    "candidate_metrics": [
+      {
+        "features": "all",
+        "model": "Lasso Regression",
+        "columns": [
+          "Q-E",
+          "ZN-E",
+          "PH-E",
+          "DBO-E",
+          "DQO-E",
+          "SS-E",
+          "SSV-E",
+          "SED-E",
+          "COND-E",
+          "PH-P",
+          "DBO-P",
+          "SS-P",
+          "SSV-P",
+          "SED-P",
+          "COND-P",
+          "PH-D",
+          "DBO-D",
+          "DQO-D",
+          "SS-D",
+          "SSV-D",
+          "SED-D",
+          "COND-D"
+        ],
+        "metrics": {
+          "MAE": 0.07892311661741723,
+          "RMSE": 0.11552106470731253,
+          "R2": 0.2646400194514896
+        },
+        "train_metrics": {
+          "MAE": 0.10175706571694572,
+          "RMSE": 0.1615738525512326,
+          "R2": 0.3569205076068497
+        }
+      },
+      {
+        "features": "all",
+        "model": "Random Forest Regressor",
+        "columns": [
+          "Q-E",
+          "ZN-E",
+          "PH-E",
+          "DBO-E",
+          "DQO-E",
+          "SS-E",
+          "SSV-E",
+          "SED-E",
+          "COND-E",
+          "PH-P",
+          "DBO-P",
+          "SS-P",
+          "SSV-P",
+          "SED-P",
+          "COND-P",
+          "PH-D",
+          "DBO-D",
+          "DQO-D",
+          "SS-D",
+          "SSV-D",
+          "SED-D",
+          "COND-D"
+        ],
+        "metrics": {
+          "MAE": 0.09332810930279326,
+          "RMSE": 0.12663606453921483,
+          "R2": 0.11632526905528606
+        },
+        "train_metrics": {
+          "MAE": 0.046623341822731486,
+          "RMSE": 0.09089047262432651,
+          "R2": 0.7965024321611617
+        }
+      },
+      {
+        "features": "all",
+        "model": "Gradient Boosting Regressor",
+        "columns": [
+          "Q-E",
+          "ZN-E",
+          "PH-E",
+          "DBO-E",
+          "DQO-E",
+          "SS-E",
+          "SSV-E",
+          "SED-E",
+          "COND-E",
+          "PH-P",
+          "DBO-P",
+          "SS-P",
+          "SSV-P",
+          "SED-P",
+          "COND-P",
+          "PH-D",
+          "DBO-D",
+          "DQO-D",
+          "SS-D",
+          "SSV-D",
+          "SED-D",
+          "COND-D"
+        ],
+        "metrics": {
+          "MAE": 0.09338496840136334,
+          "RMSE": 0.1297865505682907,
+          "R2": 0.0718097431642154
+        },
+        "train_metrics": {
+          "MAE": 0.07997474150750405,
+          "RMSE": 0.11820009306895779,
+          "R2": 0.6558417881816558
+        }
+      },
+      {
+        "features": "all",
+        "model": "XGBoost Regressor",
+        "columns": [
+          "Q-E",
+          "ZN-E",
+          "PH-E",
+          "DBO-E",
+          "DQO-E",
+          "SS-E",
+          "SSV-E",
+          "SED-E",
+          "COND-E",
+          "PH-P",
+          "DBO-P",
+          "SS-P",
+          "SSV-P",
+          "SED-P",
+          "COND-P",
+          "PH-D",
+          "DBO-D",
+          "DQO-D",
+          "SS-D",
+          "SSV-D",
+          "SED-D",
+          "COND-D"
+        ],
+        "metrics": {
+          "MAE": 0.0913763577425027,
+          "RMSE": 0.12371205945860485,
+          "R2": 0.15666194345833295
+        },
+        "train_metrics": {
+          "MAE": 0.06013464772182964,
+          "RMSE": 0.0856134709209407,
+          "R2": 0.819446168695871
+        }
+      },
+      {
+        "features": "selected",
+        "model": "Lasso Regression",
+        "columns": [
+          "PH-D",
+          "PH-E",
+          "DBO-D",
+          "PH-P",
+          "DQO-E",
+          "SSV-D",
+          "SSV-P",
+          "DBO-P",
+          "ZN-E",
+          "SSV-E"
+        ],
+        "metrics": {
+          "MAE": 0.0767050682501008,
+          "RMSE": 0.10988410506164294,
+          "R2": 0.33465426665564324
+        },
+        "train_metrics": {
+          "MAE": 0.10636872878731522,
+          "RMSE": 0.16487366484412794,
+          "R2": 0.3303851401638279
+        }
+      },
+      {
+        "features": "selected",
+        "model": "Random Forest Regressor",
+        "columns": [
+          "PH-D",
+          "PH-E",
+          "DBO-D",
+          "PH-P",
+          "DQO-E",
+          "SSV-D",
+          "SSV-P",
+          "DBO-P",
+          "ZN-E",
+          "SSV-E"
+        ],
+        "metrics": {
+          "MAE": 0.10176562580432152,
+          "RMSE": 0.1318710748404792,
+          "R2": 0.04175465699294445
+        },
+        "train_metrics": {
+          "MAE": 0.048251402809147456,
+          "RMSE": 0.0935420461377978,
+          "R2": 0.7844558549337984
+        }
+      },
+      {
+        "features": "selected",
+        "model": "Gradient Boosting Regressor",
+        "columns": [
+          "PH-D",
+          "PH-E",
+          "DBO-D",
+          "PH-P",
+          "DQO-E",
+          "SSV-D",
+          "SSV-P",
+          "DBO-P",
+          "ZN-E",
+          "SSV-E"
+        ],
+        "metrics": {
+          "MAE": 0.0921540958185828,
+          "RMSE": 0.11727958599396009,
+          "R2": 0.24208155962741928
+        },
+        "train_metrics": {
+          "MAE": 0.08590730450493271,
+          "RMSE": 0.13900846075482334,
+          "R2": 0.5240021749292683
+        }
+      },
+      {
+        "features": "selected",
+        "model": "XGBoost Regressor",
+        "columns": [
+          "PH-D",
+          "PH-E",
+          "DBO-D",
+          "PH-P",
+          "DQO-E",
+          "SSV-D",
+          "SSV-P",
+          "DBO-P",
+          "ZN-E",
+          "SSV-E"
+        ],
+        "metrics": {
+          "MAE": 0.10444748311103141,
+          "RMSE": 0.13081834057047145,
+          "R2": 0.05699304263634508
+        },
+        "train_metrics": {
+          "MAE": 0.06660160655560703,
+          "RMSE": 0.09747783274502798,
+          "R2": 0.7659362120252765
+        }
+      }
+    ],
+    "model_path": "C:\\Users\\HP\\Documents\\ChatGPT\\Aquapure\\models\\ph_s.joblib"
+  },
+  "DBO-S": {
+    "selected_model": "Random Forest Regressor",
+    "feature_set": "selected",
+    "selection_method": "SelectKBest(mutual_info_regression)",
+    "selected_features": [
+      "DBO-D",
+      "DQO-D",
+      "DBO-E",
+      "DQO-E",
+      "COND-E",
+      "SSV-D",
+      "SS-D",
+      "DBO-P",
+      "SSV-E",
+      "COND-D"
+    ],
+    "feature_ranking": {
+      "SSV-P": {
+        "correlation_abs": 0.0010888095278726402,
+        "mutual_information": 0.0,
+        "selected_kbest": false,
+        "random_forest_importance": 0.18685786319243622
+      },
+      "DQO-D": {
+        "correlation_abs": 0.19481699944100644,
+        "mutual_information": 0.20537219507665316,
+        "selected_kbest": true,
+        "random_forest_importance": 0.1465445402353
+      },
+      "DBO-D": {
+        "correlation_abs": 0.16583788168989408,
+        "mutual_information": 0.22345362134174485,
+        "selected_kbest": true,
+        "random_forest_importance": 0.10460567489950783
+      },
+      "DBO-E": {
+        "correlation_abs": 0.1361746466123349,
+        "mutual_information": 0.13051419030959233,
+        "selected_kbest": true,
+        "random_forest_importance": 0.06638540945982162
+      },
+      "SSV-E": {
+        "correlation_abs": 0.009507777078547741,
+        "mutual_information": 0.032824510219687575,
+        "selected_kbest": true,
+        "random_forest_importance": 0.05562126514695974
+      },
+      "DBO-P": {
+        "correlation_abs": 0.056928748756392894,
+        "mutual_information": 0.03951624576735524,
+        "selected_kbest": true,
+        "random_forest_importance": 0.051527789915319366
+      },
+      "SSV-D": {
+        "correlation_abs": 0.029056411181517618,
+        "mutual_information": 0.08870176140395847,
+        "selected_kbest": true,
+        "random_forest_importance": 0.0417789987858847
+      },
+      "PH-D": {
+        "correlation_abs": 0.10633507081896582,
+        "mutual_information": 0.030478194590844776,
+        "selected_kbest": false,
+        "random_forest_importance": 0.03805732456242806
+      },
+      "COND-P": {
+        "correlation_abs": 0.009925356609990842,
+        "mutual_information": 0.002768884733280963,
+        "selected_kbest": false,
+        "random_forest_importance": 0.03499208742789408
+      },
+      "SED-E": {
+        "correlation_abs": 0.031320134093085206,
+        "mutual_information": 0.0,
+        "selected_kbest": false,
+        "random_forest_importance": 0.03428497176571553
+      },
+      "SS-E": {
+        "correlation_abs": 0.01049666991876098,
+        "mutual_information": 0.0,
+        "selected_kbest": false,
+        "random_forest_importance": 0.03182609400521281
+      },
+      "ZN-E": {
+        "correlation_abs": 0.036467519532462814,
+        "mutual_information": 0.0,
+        "selected_kbest": false,
+        "random_forest_importance": 0.02637671888662097
+      },
+      "SS-P": {
+        "correlation_abs": 0.008684033311974088,
+        "mutual_information": 0.0,
+        "selected_kbest": false,
+        "random_forest_importance": 0.0263387901304853
+      },
+      "Q-E": {
+        "correlation_abs": 0.029481783096619616,
+        "mutual_information": 0.021145036413806828,
+        "selected_kbest": false,
+        "random_forest_importance": 0.024900356018486895
+      },
+      "COND-E": {
+        "correlation_abs": 0.004692942824291113,
+        "mutual_information": 0.09182896301164911,
+        "selected_kbest": true,
+        "random_forest_importance": 0.023271032027711427
+      },
+      "DQO-E": {
+        "correlation_abs": 0.07821878559195374,
+        "mutual_information": 0.10071013241942728,
+        "selected_kbest": true,
+        "random_forest_importance": 0.023196427627122377
+      },
+      "SS-D": {
+        "correlation_abs": 0.05190914563217806,
+        "mutual_information": 0.049034129254189374,
+        "selected_kbest": true,
+        "random_forest_importance": 0.018369917444724937
+      },
+      "PH-P": {
+        "correlation_abs": 0.03325594461336039,
+        "mutual_information": 0.028665867870613315,
+        "selected_kbest": false,
+        "random_forest_importance": 0.018126294181552937
+      },
+      "SED-P": {
+        "correlation_abs": 0.056630826249149654,
+        "mutual_information": 0.0,
+        "selected_kbest": false,
+        "random_forest_importance": 0.01809555367929684
+      },
+      "PH-E": {
+        "correlation_abs": 0.03335573306768513,
+        "mutual_information": 0.007051531785488674,
+        "selected_kbest": false,
+        "random_forest_importance": 0.011469881048311993
+      },
+      "COND-D": {
+        "correlation_abs": 0.013396192482950956,
+        "mutual_information": 0.03124006840487903,
+        "selected_kbest": true,
+        "random_forest_importance": 0.011450656675484368
+      },
+      "SED-D": {
+        "correlation_abs": 0.022402226556078254,
+        "mutual_information": 0.021317558312559548,
+        "selected_kbest": false,
+        "random_forest_importance": 0.005922352883722149
+      }
+    },
+    "validation_metrics": {
+      "MAE": 3.786107227434979,
+      "RMSE": 5.084080604101125,
+      "R2": -0.175162379978969
+    },
+    "test_metrics": {
+      "MAE": 8.45267926617508,
+      "RMSE": 17.9491463205889,
+      "R2": -0.027024479075582475
+    },
+    "train_metrics": {
+      "MAE": 3.8541037147038564,
+      "RMSE": 13.117588432021412,
+      "R2": 0.5320747001563215
+    },
+    "generalization_gap": {
+      "MAE_validation_minus_train": -0.06799648726887719,
+      "R2_train_minus_validation": 0.7072370801352905
+    },
+    "mean_baseline_test_metrics": {
+      "MAE": 8.742375799311363,
+      "RMSE": 17.73907682578366,
+      "R2": -0.0031254027630531755
+    },
+    "mean_baseline_validation_metrics": {
+      "MAE": 4.7150867224880395,
+      "RMSE": 5.621697587625933,
+      "R2": -0.4368385932162897
+    },
+    "mean_baseline_training_metrics": {
+      "MAE": 7.210001291322315,
+      "RMSE": 19.17634069756454,
+      "R2": 0.0
+    },
+    "validation_target_std": 4.721061432838126,
+    "chronological_target_distribution": {
+      "train": {
+        "mean": 20.389204545454547,
+        "std": 19.20363799351472
+      },
+      "validation": {
+        "mean": 17.289473684210527,
+        "std": 4.721061432838126
+      },
+      "test": {
+        "mean": 20.82894736842105,
+        "std": 17.829105909827884
+      }
+    },
+    "candidate_metrics": [
+      {
+        "features": "all",
+        "model": "Lasso Regression",
+        "columns": [
+          "Q-E",
+          "ZN-E",
+          "PH-E",
+          "DBO-E",
+          "DQO-E",
+          "SS-E",
+          "SSV-E",
+          "SED-E",
+          "COND-E",
+          "PH-P",
+          "DBO-P",
+          "SS-P",
+          "SSV-P",
+          "SED-P",
+          "COND-P",
+          "PH-D",
+          "DBO-D",
+          "DQO-D",
+          "SS-D",
+          "SSV-D",
+          "SED-D",
+          "COND-D"
+        ],
+        "metrics": {
+          "MAE": 6.19800844701563,
+          "RMSE": 7.39595846423795,
+          "R2": -1.486920787041794
+        },
+        "train_metrics": {
+          "MAE": 6.997141869749561,
+          "RMSE": 17.95528680243264,
+          "R2": 0.12329553355527456
+        }
+      },
+      {
+        "features": "all",
+        "model": "Random Forest Regressor",
+        "columns": [
+          "Q-E",
+          "ZN-E",
+          "PH-E",
+          "DBO-E",
+          "DQO-E",
+          "SS-E",
+          "SSV-E",
+          "SED-E",
+          "COND-E",
+          "PH-P",
+          "DBO-P",
+          "SS-P",
+          "SSV-P",
+          "SED-P",
+          "COND-P",
+          "PH-D",
+          "DBO-D",
+          "DQO-D",
+          "SS-D",
+          "SSV-D",
+          "SED-D",
+          "COND-D"
+        ],
+        "metrics": {
+          "MAE": 4.662588750630019,
+          "RMSE": 6.987566937346473,
+          "R2": -1.2198569446940617
+        },
+        "train_metrics": {
+          "MAE": 3.8114452263186767,
+          "RMSE": 13.100845069838421,
+          "R2": 0.5332684626714109
+        }
+      },
+      {
+        "features": "all",
+        "model": "Gradient Boosting Regressor",
+        "columns": [
+          "Q-E",
+          "ZN-E",
+          "PH-E",
+          "DBO-E",
+          "DQO-E",
+          "SS-E",
+          "SSV-E",
+          "SED-E",
+          "COND-E",
+          "PH-P",
+          "DBO-P",
+          "SS-P",
+          "SSV-P",
+          "SED-P",
+          "COND-P",
+          "PH-D",
+          "DBO-D",
+          "DQO-D",
+          "SS-D",
+          "SSV-D",
+          "SED-D",
+          "COND-D"
+        ],
+        "metrics": {
+          "MAE": 5.660591490856897,
+          "RMSE": 10.994103567161648,
+          "R2": -4.495316026777117
+        },
+        "train_metrics": {
+          "MAE": 4.470374352502059,
+          "RMSE": 6.945402105227906,
+          "R2": 0.8688213024110694
+        }
+      },
+      {
+        "features": "all",
+        "model": "XGBoost Regressor",
+        "columns": [
+          "Q-E",
+          "ZN-E",
+          "PH-E",
+          "DBO-E",
+          "DQO-E",
+          "SS-E",
+          "SSV-E",
+          "SED-E",
+          "COND-E",
+          "PH-P",
+          "DBO-P",
+          "SS-P",
+          "SSV-P",
+          "SED-P",
+          "COND-P",
+          "PH-D",
+          "DBO-D",
+          "DQO-D",
+          "SS-D",
+          "SSV-D",
+          "SED-D",
+          "COND-D"
+        ],
+        "metrics": {
+          "MAE": 4.606185022153352,
+          "RMSE": 6.2979632342426655,
+          "R2": -0.8033219438750561
+        },
+        "train_metrics": {
+          "MAE": 3.4032695320519535,
+          "RMSE": 5.209148942925236,
+          "R2": 0.9262092241908504
+        }
+      },
+      {
+        "features": "selected",
+        "model": "Lasso Regression",
+        "columns": [
+          "DBO-D",
+          "DQO-D",
+          "DBO-E",
+          "DQO-E",
+          "COND-E",
+          "SSV-D",
+          "SS-D",
+          "DBO-P",
+          "SSV-E",
+          "COND-D"
+        ],
+        "metrics": {
+          "MAE": 4.839794824171413,
+          "RMSE": 6.005639567269397,
+          "R2": -0.6398025360554873
+        },
+        "train_metrics": {
+          "MAE": 6.7334776387104265,
+          "RMSE": 18.441749949057503,
+          "R2": 0.07514684109101055
+        }
+      },
+      {
+        "features": "selected",
+        "model": "Random Forest Regressor",
+        "columns": [
+          "DBO-D",
+          "DQO-D",
+          "DBO-E",
+          "DQO-E",
+          "COND-E",
+          "SSV-D",
+          "SS-D",
+          "DBO-P",
+          "SSV-E",
+          "COND-D"
+        ],
+        "metrics": {
+          "MAE": 3.786107227434979,
+          "RMSE": 5.084080604101125,
+          "R2": -0.175162379978969
+        },
+        "train_metrics": {
+          "MAE": 3.8541037147038564,
+          "RMSE": 13.117588432021412,
+          "R2": 0.5320747001563215
+        }
+      },
+      {
+        "features": "selected",
+        "model": "Gradient Boosting Regressor",
+        "columns": [
+          "DBO-D",
+          "DQO-D",
+          "DBO-E",
+          "DQO-E",
+          "COND-E",
+          "SSV-D",
+          "SS-D",
+          "DBO-P",
+          "SSV-E",
+          "COND-D"
+        ],
+        "metrics": {
+          "MAE": 6.699298775641458,
+          "RMSE": 18.738361621474418,
+          "R2": -14.963799231614807
+        },
+        "train_metrics": {
+          "MAE": 4.555742366768811,
+          "RMSE": 7.231778150752129,
+          "R2": 0.8577806414171342
+        }
+      },
+      {
+        "features": "selected",
+        "model": "XGBoost Regressor",
+        "columns": [
+          "DBO-D",
+          "DQO-D",
+          "DBO-E",
+          "DQO-E",
+          "COND-E",
+          "SSV-D",
+          "SS-D",
+          "DBO-P",
+          "SSV-E",
+          "COND-D"
+        ],
+        "metrics": {
+          "MAE": 4.357210234591835,
+          "RMSE": 6.363584490653767,
+          "R2": -0.8410969343103538
+        },
+        "train_metrics": {
+          "MAE": 3.89240094342015,
+          "RMSE": 6.188488926291824,
+          "R2": 0.8958551587580891
+        }
+      }
+    ],
+    "model_path": "C:\\Users\\HP\\Documents\\ChatGPT\\Aquapure\\models\\dbo_s.joblib"
+  },
+  "DQO-S": {
+    "selected_model": "Gradient Boosting Regressor",
+    "feature_set": "all",
+    "selection_method": "all input features",
+    "selected_features": [
+      "Q-E",
+      "ZN-E",
+      "PH-E",
+      "DBO-E",
+      "DQO-E",
+      "SS-E",
+      "SSV-E",
+      "SED-E",
+      "COND-E",
+      "PH-P",
+      "DBO-P",
+      "SS-P",
+      "SSV-P",
+      "SED-P",
+      "COND-P",
+      "PH-D",
+      "DBO-D",
+      "DQO-D",
+      "SS-D",
+      "SSV-D",
+      "SED-D",
+      "COND-D"
+    ],
+    "feature_ranking": {
+      "DQO-D": {
+        "correlation_abs": 0.449853042168874,
+        "mutual_information": 0.16501074158850138,
+        "selected_kbest": true,
+        "random_forest_importance": 0.2915512302968584
+      },
+      "SSV-D": {
+        "correlation_abs": 0.13554935229352527,
+        "mutual_information": 0.0,
+        "selected_kbest": false,
+        "random_forest_importance": 0.07872327494909379
+      },
+      "DQO-E": {
+        "correlation_abs": 0.2926039307101804,
+        "mutual_information": 0.11060672466388777,
+        "selected_kbest": true,
+        "random_forest_importance": 0.07514990640331201
+      },
+      "SSV-P": {
+        "correlation_abs": 0.15293607266033618,
+        "mutual_information": 0.0,
+        "selected_kbest": false,
+        "random_forest_importance": 0.04799141558418467
+      },
+      "SSV-E": {
+        "correlation_abs": 0.1315004151203931,
+        "mutual_information": 0.026926441223469322,
+        "selected_kbest": true,
+        "random_forest_importance": 0.047007943630215626
+      },
+      "SS-D": {
+        "correlation_abs": 0.07013260246908679,
+        "mutual_information": 0.00031558436695622305,
+        "selected_kbest": false,
+        "random_forest_importance": 0.03937556710259685
+      },
+      "COND-P": {
+        "correlation_abs": 0.1583920967038041,
+        "mutual_information": 0.07031591895181633,
+        "selected_kbest": true,
+        "random_forest_importance": 0.035360555392580234
+      },
+      "Q-E": {
+        "correlation_abs": 0.14361162325545163,
+        "mutual_information": 0.03611367529119702,
+        "selected_kbest": true,
+        "random_forest_importance": 0.033523092465881726
+      },
+      "PH-D": {
+        "correlation_abs": 0.12442087537368178,
+        "mutual_information": 0.0034621466093893716,
+        "selected_kbest": false,
+        "random_forest_importance": 0.030338704029285873
+      },
+      "DBO-E": {
+        "correlation_abs": 0.19887194838198843,
+        "mutual_information": 0.0,
+        "selected_kbest": false,
+        "random_forest_importance": 0.030195830780083942
+      },
+      "DBO-P": {
+        "correlation_abs": 0.1763628183038737,
+        "mutual_information": 0.03806152869816337,
+        "selected_kbest": true,
+        "random_forest_importance": 0.029924299466078875
+      },
+      "DBO-D": {
+        "correlation_abs": 0.29609821675344683,
+        "mutual_information": 0.0,
+        "selected_kbest": false,
+        "random_forest_importance": 0.027948389537942216
+      },
+      "ZN-E": {
+        "correlation_abs": 0.07246342980279365,
+        "mutual_information": 0.0,
+        "selected_kbest": false,
+        "random_forest_importance": 0.027787616349330902
+      },
+      "SS-P": {
+        "correlation_abs": 0.009307610891732748,
+        "mutual_information": 0.0,
+        "selected_kbest": false,
+        "random_forest_importance": 0.027200356898085344
+      },
+      "COND-E": {
+        "correlation_abs": 0.14505981828209,
+        "mutual_information": 0.05654029554471185,
+        "selected_kbest": true,
+        "random_forest_importance": 0.026990008351208534
+      },
+      "PH-E": {
+        "correlation_abs": 0.07948434772684614,
+        "mutual_information": 0.0,
+        "selected_kbest": false,
+        "random_forest_importance": 0.025204856499595005
+      },
+      "PH-P": {
+        "correlation_abs": 0.0757747554509347,
+        "mutual_information": 0.011223523066116847,
+        "selected_kbest": true,
+        "random_forest_importance": 0.024120592786790646
+      },
+      "SED-D": {
+        "correlation_abs": 0.012085509547376814,
+        "mutual_information": 0.0,
+        "selected_kbest": false,
+        "random_forest_importance": 0.022360338546250445
+      },
+      "SED-P": {
+        "correlation_abs": 0.14455846672989953,
+        "mutual_information": 0.07074738172387285,
+        "selected_kbest": true,
+        "random_forest_importance": 0.020453088260452005
+      },
+      "COND-D": {
+        "correlation_abs": 0.1793696263595645,
+        "mutual_information": 0.06167154162904298,
+        "selected_kbest": true,
+        "random_forest_importance": 0.02042055335643246
+      },
+      "SS-E": {
+        "correlation_abs": 0.014592884646725639,
+        "mutual_information": 0.0,
+        "selected_kbest": false,
+        "random_forest_importance": 0.020174114480562153
+      },
+      "SED-E": {
+        "correlation_abs": 0.07911128521613053,
+        "mutual_information": 0.007894537574726801,
+        "selected_kbest": false,
+        "random_forest_importance": 0.018198264833178244
+      }
+    },
+    "validation_metrics": {
+      "MAE": 18.071736619523527,
+      "RMSE": 23.109315882661647,
+      "R2": 0.00923570465034429
+    },
+    "test_metrics": {
+      "MAE": 28.890945572798806,
+      "RMSE": 46.33635869414912,
+      "R2": 0.15004335982298866
+    },
+    "train_metrics": {
+      "MAE": 17.243414929137252,
+      "RMSE": 24.186968070441047,
+      "R2": 0.607035434129598
+    },
+    "generalization_gap": {
+      "MAE_validation_minus_train": 0.8283216903862751,
+      "R2_train_minus_validation": 0.5977997294792537
+    },
+    "mean_baseline_test_metrics": {
+      "MAE": 33.3559102934103,
+      "RMSE": 50.289169608243874,
+      "R2": -0.0011563258630769013
+    },
+    "mean_baseline_validation_metrics": {
+      "MAE": 20.531416321703134,
+      "RMSE": 25.85104452595827,
+      "R2": -0.23980208012658055
+    },
+    "mean_baseline_training_metrics": {
+      "MAE": 25.844574548668092,
+      "RMSE": 38.58377671660008,
+      "R2": 0.0
+    },
+    "validation_target_std": 23.371042211144278,
+    "chronological_target_distribution": {
+      "train": {
+        "mean": 89.55337078651685,
+        "std": 38.63808184793187
+      },
+      "validation": {
+        "mean": 78.1842105263158,
+        "std": 23.371042211144278
+      },
+      "test": {
+        "mean": 85.84415584415585,
+        "std": 50.58969755089649
+      }
+    },
+    "candidate_metrics": [
+      {
+        "features": "all",
+        "model": "Lasso Regression",
+        "columns": [
+          "Q-E",
+          "ZN-E",
+          "PH-E",
+          "DBO-E",
+          "DQO-E",
+          "SS-E",
+          "SSV-E",
+          "SED-E",
+          "COND-E",
+          "PH-P",
+          "DBO-P",
+          "SS-P",
+          "SSV-P",
+          "SED-P",
+          "COND-P",
+          "PH-D",
+          "DBO-D",
+          "DQO-D",
+          "SS-D",
+          "SSV-D",
+          "SED-D",
+          "COND-D"
+        ],
+        "metrics": {
+          "MAE": 19.420370287166353,
+          "RMSE": 24.271981221908895,
+          "R2": -0.09296592967186967
+        },
+        "train_metrics": {
+          "MAE": 21.975661314182396,
+          "RMSE": 32.33982631316241,
+          "R2": 0.29746834946462186
+        }
+      },
+      {
+        "features": "all",
+        "model": "Random Forest Regressor",
+        "columns": [
+          "Q-E",
+          "ZN-E",
+          "PH-E",
+          "DBO-E",
+          "DQO-E",
+          "SS-E",
+          "SSV-E",
+          "SED-E",
+          "COND-E",
+          "PH-P",
+          "DBO-P",
+          "SS-P",
+          "SSV-P",
+          "SED-P",
+          "COND-P",
+          "PH-D",
+          "DBO-D",
+          "DQO-D",
+          "SS-D",
+          "SSV-D",
+          "SED-D",
+          "COND-D"
+        ],
+        "metrics": {
+          "MAE": 19.21728188627561,
+          "RMSE": 24.70309377252398,
+          "R2": -0.1321366849227903
+        },
+        "train_metrics": {
+          "MAE": 10.103713968403063,
+          "RMSE": 17.314867073885075,
+          "R2": 0.7986141964142449
+        }
+      },
+      {
+        "features": "all",
+        "model": "Gradient Boosting Regressor",
+        "columns": [
+          "Q-E",
+          "ZN-E",
+          "PH-E",
+          "DBO-E",
+          "DQO-E",
+          "SS-E",
+          "SSV-E",
+          "SED-E",
+          "COND-E",
+          "PH-P",
+          "DBO-P",
+          "SS-P",
+          "SSV-P",
+          "SED-P",
+          "COND-P",
+          "PH-D",
+          "DBO-D",
+          "DQO-D",
+          "SS-D",
+          "SSV-D",
+          "SED-D",
+          "COND-D"
+        ],
+        "metrics": {
+          "MAE": 18.071736619523527,
+          "RMSE": 23.109315882661647,
+          "R2": 0.00923570465034429
+        },
+        "train_metrics": {
+          "MAE": 17.243414929137252,
+          "RMSE": 24.186968070441047,
+          "R2": 0.607035434129598
+        }
+      },
+      {
+        "features": "all",
+        "model": "XGBoost Regressor",
+        "columns": [
+          "Q-E",
+          "ZN-E",
+          "PH-E",
+          "DBO-E",
+          "DQO-E",
+          "SS-E",
+          "SSV-E",
+          "SED-E",
+          "COND-E",
+          "PH-P",
+          "DBO-P",
+          "SS-P",
+          "SSV-P",
+          "SED-P",
+          "COND-P",
+          "PH-D",
+          "DBO-D",
+          "DQO-D",
+          "SS-D",
+          "SSV-D",
+          "SED-D",
+          "COND-D"
+        ],
+        "metrics": {
+          "MAE": 18.14857241981908,
+          "RMSE": 23.616467586362205,
+          "R2": -0.034727632388438234
+        },
+        "train_metrics": {
+          "MAE": 12.538136953718206,
+          "RMSE": 17.323284638419636,
+          "R2": 0.7984183427535336
+        }
+      },
+      {
+        "features": "selected",
+        "model": "Lasso Regression",
+        "columns": [
+          "DQO-D",
+          "DQO-E",
+          "SED-P",
+          "COND-P",
+          "COND-D",
+          "COND-E",
+          "DBO-P",
+          "Q-E",
+          "SSV-E",
+          "PH-P"
+        ],
+        "metrics": {
+          "MAE": 19.311015863162037,
+          "RMSE": 23.888569013426213,
+          "R2": -0.05870859686709329
+        },
+        "train_metrics": {
+          "MAE": 22.596772754073676,
+          "RMSE": 33.68051973411979,
+          "R2": 0.2380120598785016
+        }
+      },
+      {
+        "features": "selected",
+        "model": "Random Forest Regressor",
+        "columns": [
+          "DQO-D",
+          "DQO-E",
+          "SED-P",
+          "COND-P",
+          "COND-D",
+          "COND-E",
+          "DBO-P",
+          "Q-E",
+          "SSV-E",
+          "PH-P"
+        ],
+        "metrics": {
+          "MAE": 19.860005208441216,
+          "RMSE": 24.523337432044794,
+          "R2": -0.11572025417555243
+        },
+        "train_metrics": {
+          "MAE": 10.903612116624437,
+          "RMSE": 18.37691420235579,
+          "R2": 0.7731516085513822
+        }
+      },
+      {
+        "features": "selected",
+        "model": "Gradient Boosting Regressor",
+        "columns": [
+          "DQO-D",
+          "DQO-E",
+          "SED-P",
+          "COND-P",
+          "COND-D",
+          "COND-E",
+          "DBO-P",
+          "Q-E",
+          "SSV-E",
+          "PH-P"
+        ],
+        "metrics": {
+          "MAE": 19.60809377577515,
+          "RMSE": 23.640357716083674,
+          "R2": -0.03682212686657338
+        },
+        "train_metrics": {
+          "MAE": 18.123973177224904,
+          "RMSE": 24.79741820266653,
+          "R2": 0.5869492059518079
+        }
+      },
+      {
+        "features": "selected",
+        "model": "XGBoost Regressor",
+        "columns": [
+          "DQO-D",
+          "DQO-E",
+          "SED-P",
+          "COND-P",
+          "COND-D",
+          "COND-E",
+          "DBO-P",
+          "Q-E",
+          "SSV-E",
+          "PH-P"
+        ],
+        "metrics": {
+          "MAE": 20.424622134158486,
+          "RMSE": 24.529827219453683,
+          "R2": -0.11631085448583223
+        },
+        "train_metrics": {
+          "MAE": 14.517830109328367,
+          "RMSE": 19.927600759403372,
+          "R2": 0.7332523782260214
+        }
+      }
+    ],
+    "model_path": "C:\\Users\\HP\\Documents\\ChatGPT\\Aquapure\\models\\dqo_s.joblib"
+  },
+  "SS-S": {
+    "selected_model": "XGBoost Regressor",
+    "feature_set": "all",
+    "selection_method": "all input features",
+    "selected_features": [
+      "Q-E",
+      "ZN-E",
+      "PH-E",
+      "DBO-E",
+      "DQO-E",
+      "SS-E",
+      "SSV-E",
+      "SED-E",
+      "COND-E",
+      "PH-P",
+      "DBO-P",
+      "SS-P",
+      "SSV-P",
+      "SED-P",
+      "COND-P",
+      "PH-D",
+      "DBO-D",
+      "DQO-D",
+      "SS-D",
+      "SSV-D",
+      "SED-D",
+      "COND-D"
+    ],
+    "feature_ranking": {
+      "SSV-P": {
+        "correlation_abs": 0.004531532699731031,
+        "mutual_information": 0.04335068224784644,
+        "selected_kbest": true,
+        "random_forest_importance": 0.16501639126276463
+      },
+      "DQO-D": {
+        "correlation_abs": 0.1876883410105676,
+        "mutual_information": 0.0018923167640281235,
+        "selected_kbest": false,
+        "random_forest_importance": 0.12107204352302454
+      },
+      "DBO-E": {
+        "correlation_abs": 0.09836859480902935,
+        "mutual_information": 0.004673075914425784,
+        "selected_kbest": false,
+        "random_forest_importance": 0.07391105766168446
+      },
+      "DBO-D": {
+        "correlation_abs": 0.1577289428498382,
+        "mutual_information": 0.007753971415625838,
+        "selected_kbest": true,
+        "random_forest_importance": 0.07338524620827616
+      },
+      "PH-D": {
+        "correlation_abs": 0.20236555709048282,
+        "mutual_information": 0.0,
+        "selected_kbest": false,
+        "random_forest_importance": 0.0491515594792693
+      },
+      "COND-P": {
+        "correlation_abs": 0.015486437679372486,
+        "mutual_information": 0.027105628112607416,
+        "selected_kbest": true,
+        "random_forest_importance": 0.04658399185526036
+      },
+      "SSV-E": {
+        "correlation_abs": 0.015775205279118642,
+        "mutual_information": 0.06120644680696774,
+        "selected_kbest": true,
+        "random_forest_importance": 0.04551307514628738
+      },
+      "SSV-D": {
+        "correlation_abs": 0.010773350339086484,
+        "mutual_information": 0.003641611252013899,
+        "selected_kbest": false,
+        "random_forest_importance": 0.044556675442454265
+      },
+      "SS-E": {
+        "correlation_abs": 0.01570896384582692,
+        "mutual_information": 0.013328578031624794,
+        "selected_kbest": true,
+        "random_forest_importance": 0.04400304444347904
+      },
+      "SED-E": {
+        "correlation_abs": 0.013279057565802022,
+        "mutual_information": 0.0,
+        "selected_kbest": false,
+        "random_forest_importance": 0.04110194160674899
+      },
+      "COND-E": {
+        "correlation_abs": 0.008637301963627652,
+        "mutual_information": 0.0774087376435566,
+        "selected_kbest": true,
+        "random_forest_importance": 0.039468941553634174
+      },
+      "SS-P": {
+        "correlation_abs": 0.02518672150295735,
+        "mutual_information": 0.0,
+        "selected_kbest": false,
+        "random_forest_importance": 0.03333941625098008
+      },
+      "COND-D": {
+        "correlation_abs": 0.030846601072181876,
+        "mutual_information": 0.001862437003238071,
+        "selected_kbest": false,
+        "random_forest_importance": 0.03271673819372687
+      },
+      "Q-E": {
+        "correlation_abs": 0.040825292875065665,
+        "mutual_information": 0.032193003655533126,
+        "selected_kbest": true,
+        "random_forest_importance": 0.027883279915117687
+      },
+      "ZN-E": {
+        "correlation_abs": 0.08059402475165288,
+        "mutual_information": 0.0,
+        "selected_kbest": false,
+        "random_forest_importance": 0.027375869126593223
+      },
+      "DQO-E": {
+        "correlation_abs": 0.05313534436271171,
+        "mutual_information": 0.0,
+        "selected_kbest": false,
+        "random_forest_importance": 0.02575243038292864
+      },
+      "DBO-P": {
+        "correlation_abs": 0.020670557557585217,
+        "mutual_information": 0.03541604058042802,
+        "selected_kbest": true,
+        "random_forest_importance": 0.025529233426594817
+      },
+      "PH-P": {
+        "correlation_abs": 0.1151490937543261,
+        "mutual_information": 0.006207097611617751,
+        "selected_kbest": true,
+        "random_forest_importance": 0.020517302167753323
+      },
+      "SS-D": {
+        "correlation_abs": 0.05773418193531521,
+        "mutual_information": 0.0003472991339790177,
+        "selected_kbest": false,
+        "random_forest_importance": 0.017058231844947546
+      },
+      "PH-E": {
+        "correlation_abs": 0.1131400081367306,
+        "mutual_information": 0.0,
+        "selected_kbest": false,
+        "random_forest_importance": 0.01674643882744087
+      },
+      "SED-D": {
+        "correlation_abs": 0.03409141055821516,
+        "mutual_information": 0.029845779503298697,
+        "selected_kbest": true,
+        "random_forest_importance": 0.015148541333134192
+      },
+      "SED-P": {
+        "correlation_abs": 0.03055173806506358,
+        "mutual_information": 0.0,
+        "selected_kbest": false,
+        "random_forest_importance": 0.014168550347899553
+      }
+    },
+    "validation_metrics": {
+      "MAE": 6.29927396774292,
+      "RMSE": 8.5080950788377,
+      "R2": -0.26167882250927965
+    },
+    "test_metrics": {
+      "MAE": 8.241215585153315,
+      "RMSE": 14.668011461218047,
+      "R2": -0.024345150958782424
+    },
+    "train_metrics": {
+      "MAE": 4.933209398348038,
+      "RMSE": 7.852707504767121,
+      "R2": 0.806659491482793
+    },
+    "generalization_gap": {
+      "MAE_validation_minus_train": 1.366064569394882,
+      "R2_train_minus_validation": 1.0683383139920726
+    },
+    "mean_baseline_test_metrics": {
+      "MAE": 7.921107523502015,
+      "RMSE": 14.505172119900578,
+      "R2": -0.0017275260943576676
+    },
+    "mean_baseline_validation_metrics": {
+      "MAE": 7.442219880576045,
+      "RMSE": 9.024386278824561,
+      "R2": -0.4194480332094248
+    },
+    "mean_baseline_training_metrics": {
+      "MAE": 9.266458997935823,
+      "RMSE": 17.85903519019333,
+      "R2": 0.0
+    },
+    "validation_target_std": 7.623595878534888,
+    "chronological_target_distribution": {
+      "train": {
+        "mean": 23.008219178082193,
+        "std": 17.88355000638715
+      },
+      "validation": {
+        "mean": 18.102564102564102,
+        "std": 7.623595878534888
+      },
+      "test": {
+        "mean": 22.746835443037973,
+        "std": 14.585265092068337
+      }
+    },
+    "candidate_metrics": [
+      {
+        "features": "all",
+        "model": "Lasso Regression",
+        "columns": [
+          "Q-E",
+          "ZN-E",
+          "PH-E",
+          "DBO-E",
+          "DQO-E",
+          "SS-E",
+          "SSV-E",
+          "SED-E",
+          "COND-E",
+          "PH-P",
+          "DBO-P",
+          "SS-P",
+          "SSV-P",
+          "SED-P",
+          "COND-P",
+          "PH-D",
+          "DBO-D",
+          "DQO-D",
+          "SS-D",
+          "SSV-D",
+          "SED-D",
+          "COND-D"
+        ],
+        "metrics": {
+          "MAE": 8.929992262656896,
+          "RMSE": 11.083853408741676,
+          "R2": -1.1412416922263846
+        },
+        "train_metrics": {
+          "MAE": 8.855427225564831,
+          "RMSE": 16.273005688533114,
+          "R2": 0.16972957837763447
+        }
+      },
+      {
+        "features": "all",
+        "model": "Random Forest Regressor",
+        "columns": [
+          "Q-E",
+          "ZN-E",
+          "PH-E",
+          "DBO-E",
+          "DQO-E",
+          "SS-E",
+          "SSV-E",
+          "SED-E",
+          "COND-E",
+          "PH-P",
+          "DBO-P",
+          "SS-P",
+          "SSV-P",
+          "SED-P",
+          "COND-P",
+          "PH-D",
+          "DBO-D",
+          "DQO-D",
+          "SS-D",
+          "SSV-D",
+          "SED-D",
+          "COND-D"
+        ],
+        "metrics": {
+          "MAE": 7.766275639343821,
+          "RMSE": 10.147356565975914,
+          "R2": -0.7946922474549056
+        },
+        "train_metrics": {
+          "MAE": 4.465028544860426,
+          "RMSE": 10.364565204051846,
+          "R2": 0.6631890595101342
+        }
+      },
+      {
+        "features": "all",
+        "model": "Gradient Boosting Regressor",
+        "columns": [
+          "Q-E",
+          "ZN-E",
+          "PH-E",
+          "DBO-E",
+          "DQO-E",
+          "SS-E",
+          "SSV-E",
+          "SED-E",
+          "COND-E",
+          "PH-P",
+          "DBO-P",
+          "SS-P",
+          "SSV-P",
+          "SED-P",
+          "COND-P",
+          "PH-D",
+          "DBO-D",
+          "DQO-D",
+          "SS-D",
+          "SSV-D",
+          "SED-D",
+          "COND-D"
+        ],
+        "metrics": {
+          "MAE": 7.156023656196036,
+          "RMSE": 9.522372840256597,
+          "R2": -0.5804272458686166
+        },
+        "train_metrics": {
+          "MAE": 6.268002508962557,
+          "RMSE": 10.177329310913004,
+          "R2": 0.6752481239351358
+        }
+      },
+      {
+        "features": "all",
+        "model": "XGBoost Regressor",
+        "columns": [
+          "Q-E",
+          "ZN-E",
+          "PH-E",
+          "DBO-E",
+          "DQO-E",
+          "SS-E",
+          "SSV-E",
+          "SED-E",
+          "COND-E",
+          "PH-P",
+          "DBO-P",
+          "SS-P",
+          "SSV-P",
+          "SED-P",
+          "COND-P",
+          "PH-D",
+          "DBO-D",
+          "DQO-D",
+          "SS-D",
+          "SSV-D",
+          "SED-D",
+          "COND-D"
+        ],
+        "metrics": {
+          "MAE": 6.29927396774292,
+          "RMSE": 8.5080950788377,
+          "R2": -0.26167882250927965
+        },
+        "train_metrics": {
+          "MAE": 4.933209398348038,
+          "RMSE": 7.852707504767121,
+          "R2": 0.806659491482793
+        }
+      },
+      {
+        "features": "selected",
+        "model": "Lasso Regression",
+        "columns": [
+          "COND-E",
+          "SSV-E",
+          "SSV-P",
+          "DBO-P",
+          "Q-E",
+          "SED-D",
+          "COND-P",
+          "SS-E",
+          "DBO-D",
+          "PH-P"
+        ],
+        "metrics": {
+          "MAE": 7.534253683490998,
+          "RMSE": 9.14020451456156,
+          "R2": -0.4561159897548359
+        },
+        "train_metrics": {
+          "MAE": 8.724180999992988,
+          "RMSE": 17.29922552252598,
+          "R2": 0.06170946631581675
+        }
+      },
+      {
+        "features": "selected",
+        "model": "Random Forest Regressor",
+        "columns": [
+          "COND-E",
+          "SSV-E",
+          "SSV-P",
+          "DBO-P",
+          "Q-E",
+          "SED-D",
+          "COND-P",
+          "SS-E",
+          "DBO-D",
+          "PH-P"
+        ],
+        "metrics": {
+          "MAE": 8.161307481530384,
+          "RMSE": 10.67594990224105,
+          "R2": -0.9865394713331577
+        },
+        "train_metrics": {
+          "MAE": 4.68597984515139,
+          "RMSE": 10.91043647875346,
+          "R2": 0.6267771161789312
+        }
+      },
+      {
+        "features": "selected",
+        "model": "Gradient Boosting Regressor",
+        "columns": [
+          "COND-E",
+          "SSV-E",
+          "SSV-P",
+          "DBO-P",
+          "Q-E",
+          "SED-D",
+          "COND-P",
+          "SS-E",
+          "DBO-D",
+          "PH-P"
+        ],
+        "metrics": {
+          "MAE": 7.206226993637045,
+          "RMSE": 9.202482793298262,
+          "R2": -0.47602656042680813
+        },
+        "train_metrics": {
+          "MAE": 6.723022648599014,
+          "RMSE": 10.627414065225471,
+          "R2": 0.6458891631059603
+        }
+      },
+      {
+        "features": "selected",
+        "model": "XGBoost Regressor",
+        "columns": [
+          "COND-E",
+          "SSV-E",
+          "SSV-P",
+          "DBO-P",
+          "Q-E",
+          "SED-D",
+          "COND-P",
+          "SS-E",
+          "DBO-D",
+          "PH-P"
+        ],
+        "metrics": {
+          "MAE": 7.595478864816519,
+          "RMSE": 10.45878075853657,
+          "R2": -0.9065414987138174
+        },
+        "train_metrics": {
+          "MAE": 5.563473510742187,
+          "RMSE": 8.853205293030763,
+          "R2": 0.7542547772617684
+        }
+      }
+    ],
+    "model_path": "C:\\Users\\HP\\Documents\\ChatGPT\\Aquapure\\models\\ss_s.joblib"
+  }
+}

@@ -1,0 +1,205 @@
+{
+  "data_classification": "SIMULATED TEST DATA",
+  "anomaly": {
+    "label": "Normal",
+    "anomaly_score": -0.1340142073809913,
+    "interpretation": "Unusual learned input pattern, not a verified plant fault.",
+    "deviating_inputs": [
+      {
+        "feature": "DQO-D",
+        "value": 368.0,
+        "distance_from_training_median_iqr": 0.8054919908466819,
+        "absolute_distance_from_training_median": 88.0
+      },
+      {
+        "feature": "DBO-D",
+        "value": 165.0,
+        "distance_from_training_median_iqr": 0.7254901960784313,
+        "absolute_distance_from_training_median": 37.0
+      },
+      {
+        "feature": "SS-P",
+        "value": 188.0,
+        "distance_from_training_median_iqr": 0.4067796610169492,
+        "absolute_distance_from_training_median": 36.0
+      },
+      {
+        "feature": "SED-P",
+        "value": 5.5,
+        "distance_from_training_median_iqr": 0.4,
+        "absolute_distance_from_training_median": 1.0
+      },
+      {
+        "feature": "Q-E",
+        "value": 34193.0,
+        "distance_from_training_median_iqr": 0.3964560020711676,
+        "absolute_distance_from_training_median": 3445.5
+      }
+    ]
+  },
+  "predictions_are_model_predictions": {
+    "PH-S": 7.580191071428568,
+    "DBO-S": 25.106821428571433,
+    "DQO-S": 107.83526488095232,
+    "SS-S": 29.133792658730155
+  },
+  "recommendations": [
+    {
+      "problem": "DBO-S high",
+      "predicted_value": 25.106821428571433,
+      "configured_demo_range": [
+        0.0,
+        25.0
+      ],
+      "operator_check": "Check biological treatment performance and relevant aeration measurements."
+    }
+  ],
+  "digital_twin": {
+    "scenarios": [
+      {
+        "scenario": "Current Condition",
+        "changed_feature": null,
+        "input_value": 34193.0,
+        "predictions": {
+          "PH-S": 7.580191071428568,
+          "DBO-S": 25.106821428571433,
+          "DQO-S": 107.83526488095232,
+          "SS-S": 29.133792658730155
+        },
+        "effective_parameter_change": 0.0,
+        "valid_training_input_range": [
+          26346.6,
+          52955.119999999995
+        ],
+        "bound_limited": false,
+        "differences_from_baseline": {
+          "PH-S": 0.0,
+          "DBO-S": 0.0,
+          "DQO-S": 0.0,
+          "SS-S": 0.0
+        },
+        "quality_distance": 0.004272857142857305
+      },
+      {
+        "scenario": "Lower Parameter",
+        "changed_feature": "Q-E",
+        "input_value": 26346.6,
+        "predictions": {
+          "PH-S": 7.586863988095234,
+          "DBO-S": 25.13152083333334,
+          "DQO-S": 109.70391071428568,
+          "SS-S": 29.548146825396813
+        },
+        "effective_parameter_change": -7846.4000000000015,
+        "valid_training_input_range": [
+          26346.6,
+          52955.119999999995
+        ],
+        "bound_limited": false,
+        "differences_from_baseline": {
+          "PH-S": 0.00667291666666614,
+          "DBO-S": 0.024699404761907573,
+          "DQO-S": 1.8686458333333604,
+          "SS-S": 0.4143541666666586
+        },
+        "quality_distance": 0.005260833333333608
+      },
+      {
+        "scenario": "Higher Parameter",
+        "changed_feature": "Q-E",
+        "input_value": 42883.75,
+        "predictions": {
+          "PH-S": 7.583313095238094,
+          "DBO-S": 25.942601190476193,
+          "DQO-S": 109.06772916666661,
+          "SS-S": 29.875929563492065
+        },
+        "effective_parameter_change": 8690.75,
+        "valid_training_input_range": [
+          26346.6,
+          52955.119999999995
+        ],
+        "bound_limited": false,
+        "differences_from_baseline": {
+          "PH-S": 0.0031220238095261976,
+          "DBO-S": 0.8357797619047602,
+          "DQO-S": 1.2324642857142862,
+          "SS-S": 0.7421369047619102
+        },
+        "quality_distance": 0.03770404761904771
+      }
+    ],
+    "preferred_scenario": "Current Condition",
+    "explanation": "Lowest distance to configured demonstration bands; ties retain current condition.",
+    "warning": "Virtual predictions do not establish real-world improvement. Plant changes require operator approval and validation."
+  },
+  "preferred_scenario_recommendations": [
+    {
+      "problem": "DBO-S high",
+      "predicted_value": 25.106821428571433,
+      "configured_demo_range": [
+        0.0,
+        25.0
+      ],
+      "operator_check": "Check biological treatment performance and relevant aeration measurements."
+    }
+  ],
+  "functional_test_records": 12,
+  "deliberately_perturbed_records": 3,
+  "checks": {
+    "simulated_inputs_validated": true,
+    "prediction_and_twin_share_saved_pipeline": true,
+    "digital_twin_scenarios": [
+      "Current Condition",
+      "Lower Parameter",
+      "Higher Parameter"
+    ],
+    "simultaneous_recommendation_rule_check_count": 5,
+    "simultaneous_recommendation_rule_check": [
+      {
+        "problem": "PH-S outside configured range",
+        "predicted_value": 10.0,
+        "configured_demo_range": [
+          6.0,
+          9.0
+        ],
+        "operator_check": "Check pH measurements and the relevant treatment stage."
+      },
+      {
+        "problem": "DBO-S high",
+        "predicted_value": 30.0,
+        "configured_demo_range": [
+          0.0,
+          25.0
+        ],
+        "operator_check": "Check biological treatment performance and relevant aeration measurements."
+      },
+      {
+        "problem": "DQO-S high",
+        "predicted_value": 150.0,
+        "configured_demo_range": [
+          0.0,
+          125.0
+        ],
+        "operator_check": "Check the organic pollutant removal process."
+      },
+      {
+        "problem": "SS-S high",
+        "predicted_value": 40.0,
+        "configured_demo_range": [
+          0.0,
+          35.0
+        ],
+        "operator_check": "Inspect filtration and suspended-solids removal."
+      },
+      {
+        "problem": "Potential anomaly",
+        "operator_check": "Inspect unusual process parameters and verify measurements.",
+        "deviating_inputs": []
+      }
+    ]
+  },
+  "simulated_anomaly_flags": 0,
+  "simulated_records_with_recommendation": 2,
+  "synthetic_records_used_for_training_or_metrics": false
+}

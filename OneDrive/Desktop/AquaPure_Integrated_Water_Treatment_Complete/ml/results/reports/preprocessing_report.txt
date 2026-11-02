@@ -1,0 +1,40 @@
+AQUAPURE PREPROCESSING REPORT
+Split: chronological per target; 70% train, 15% validation, 15% held-out test.
+Missing predictor values: median imputation fitted inside each training pipeline.
+Scaling: StandardScaler used for linear estimators and anomaly detectors; fit on training rows.
+Outliers: IQR flags are reported for review; no rows are deleted or clipped because valid excursions cannot be distinguished from measurement errors here.
+Synthetic records: 600; saved separately and excluded from model training.
+
+Target split counts:
+PH-S: train=368, validation=79, test=79
+DBO-S: train=352, validation=76, test=76
+DQO-S: train=356, validation=76, test=77
+SS-S: train=365, validation=78, test=79
+
+IQR screening counts across raw REAL values:
+Q-E: 11
+ZN-E: 33
+PH-E: 2
+DBO-E: 14
+DQO-E: 11
+SS-E: 39
+SSV-E: 24
+SED-E: 9
+COND-E: 15
+PH-P: 1
+DBO-P: 15
+SS-P: 39
+SSV-P: 20
+SED-P: 16
+COND-P: 13
+PH-D: 10
+DBO-D: 1
+DQO-D: 1
+SS-D: 13
+SSV-D: 23
+SED-D: 41
+COND-D: 14
+PH-S: 6
+DBO-S: 16
+DQO-S: 20
+SS-S: 34

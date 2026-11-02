@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 47% 6%;
+    --foreground: 180 20% 95%;
+
+    --card: 222 40% 10%;
+    --card-foreground: 180 20% 95%;
+
+    --popover: 222 40% 10%;
+    --popover-foreground: 180 20% 95%;
+
+    --primary: 174 72% 50%;
+    --primary-foreground: 222 47% 6%;
+
+    --secondary: 150 60% 45%;
+    --secondary-foreground: 222 47% 6%;
+
+    --muted: 222 30% 18%;
+    --muted-foreground: 215 20% 55%;
+
+    --accent: 174 72% 40%;
+    --accent-foreground: 180 20% 95%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 222 30% 20%;
+    --input: 222 30% 20%;
+    --ring: 174 72% 50%;
+
+    --radius: 0.75rem;
+
+    /* Custom Nutriloop tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(174 72% 50%) 0%, hsl(150 60% 45%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(222 47% 6%) 0%, hsl(222 40% 10%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(222 40% 12%) 0%, hsl(222 40% 8%) 100%);
+    --gradient-glow: radial-gradient(ellipse at center, hsl(174 72% 50% / 0.15) 0%, transparent 70%);
+    
+    --shadow-glow: 0 0 60px hsl(174 72% 50% / 0.3);
+    --shadow-card: 0 8px 32px hsl(222 47% 2% / 0.5);
+    --shadow-elevated: 0 20px 60px hsl(222 47% 2% / 0.6);
+
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+    --sidebar-background: 222 40% 8%;
+    --sidebar-foreground: 180 20% 95%;
+    --sidebar-primary: 174 72% 50%;
+    --sidebar-primary-foreground: 222 47% 6%;
+    --sidebar-accent: 222 30% 18%;
+    --sidebar-accent-foreground: 180 20% 95%;
+    --sidebar-border: 222 30% 20%;
+    --sidebar-ring: 174 72% 50%;
+  }
+
+  .dark {
+    --background: 222 47% 6%;
+    --foreground: 180 20% 95%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-body {
+    font-family: var(--font-body);
+  }
+
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glow-primary {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 3s ease-in-out infinite;
+  }
+
+  .animate-flow {
+    animation: flow 8s linear infinite;
+  }
+
+  /* Cyber-Industrial palette (AquaPure ML Suite) */
+  .cyber-bg { background-color: #060913; }
+  .cyber-cyan { color: #00f2fe; }
+  .cyber-blue { color: #4facfe; }
+  .cyber-green { color: #00e676; }
+  .cyber-yellow { color: #ffd600; }
+  .cyber-red { color: #ff1744; }
+  .cyber-purple { color: #7000ff; }
+  .bg-cyber-cyan { background-color: #00f2fe; }
+  .bg-cyber-green { background-color: #00e676; }
+  .bg-cyber-yellow { background-color: #ffd600; }
+  .bg-cyber-red { background-color: #ff1744; }
+  .bg-cyber-purple { background-color: #7000ff; }
+  .border-cyber-cyan { border-color: #00f2fe; }
+  .glass-card {
+    background: rgba(10, 18, 34, 0.55);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(0, 242, 254, 0.18);
+    box-shadow: 0 0 24px rgba(0, 242, 254, 0.08), inset 0 1px 0 rgba(255,255,255,0.04);
+  }
+  .glass-card-strong {
+    background: rgba(10, 18, 34, 0.75);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 242, 254, 0.35);
+    box-shadow: 0 0 40px rgba(0, 242, 254, 0.18);
+  }
+  .glow-cyan { box-shadow: 0 0 24px rgba(0, 242, 254, 0.45); }
+  .glow-green { box-shadow: 0 0 24px rgba(0, 230, 118, 0.45); }
+  .glow-red { box-shadow: 0 0 24px rgba(255, 23, 68, 0.45); }
+  .glow-yellow { box-shadow: 0 0 24px rgba(255, 214, 0, 0.45); }
+  .text-glow-cyan { text-shadow: 0 0 12px rgba(0, 242, 254, 0.6); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+@keyframes flow {
+  0% { background-position: 200% 50%; }
+  100% { background-position: -200% 50%; }
+}
+
+@keyframes flowParticle {
+  0% { 
+    left: -8px;
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  5% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  95% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% { 
+    left: calc(100% + 8px);
+    opacity: 0;
+    transform: scale(0.5);
+  }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Splash droplet animations */
+@keyframes splash0 {
+  0%, 80% { 
+    transform: translate(0, 0) scale(0);
+    opacity: 0;
+  }
+  85% {
+    transform: translate(-6px, -8px) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-10px, -16px) scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes splash1 {
+  0%, 80% { 
+    transform: translate(0, 0) scale(0);
+    opacity: 0;
+  }
+  85% {
+    transform: translate(0, -10px) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0, -20px) scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes splash2 {
+  0%, 80% { 
+    transform: translate(0, 0) scale(0);
+    opacity: 0;
+  }
+  85% {
+    transform: translate(6px, -8px) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(10px, -16px) scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes ripple {
+  0%, 80% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+  }
+  85% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(2);
+    opacity: 0;
+  }
+}
+
+@keyframes stagePulse {
+  0%, 80% {
+    background: transparent;
+  }
+  85% {
+    background: hsl(var(--primary) / 0.15);
+  }
+  100% {
+    background: transparent;
+  }
+}
+
+@keyframes iconSplash {
+  0%, 80% {
+    box-shadow: 0 0 0 0 hsl(var(--primary) / 0);
+  }
+  85% {
+    box-shadow: 0 0 0 4px hsl(var(--primary) / 0.3);
+  }
+  100% {
+    box-shadow: 0 0 0 8px hsl(var(--primary) / 0);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary));
+}

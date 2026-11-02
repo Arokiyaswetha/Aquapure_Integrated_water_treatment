@@ -1,0 +1,4 @@
+algorithm,real_validation_rows,real_validation_flagged,real_validation_flag_rate,synthetic_rows,synthetic_flagged,synthetic_flag_rate,validation_synthetic_flag_rate_difference,validation_score_mean,synthetic_score_mean,selection_note,mean_pairwise_agreement,selected
+Isolation Forest,79,6,0.0759493670886076,600,46,0.07666666666666666,0.0007172995780590635,-0.08254241004711214,-0.07616370422043638,Unsupervised comparison; no verified fault labels.,0.9258333333333333,True
+One-Class SVM,79,14,0.17721518987341772,600,85,0.14166666666666666,0.03554852320675106,-0.27774121217832776,-0.2517619114031131,Unsupervised comparison; no verified fault labels.,0.9033333333333333,False
+LOF,79,6,0.0759493670886076,600,34,0.056666666666666664,0.019282700421940933,-0.30629916193216966,-0.3573124045770321,Unsupervised comparison; no verified fault labels.,0.9241666666666666,False

@@ -1,0 +1,80 @@
+{
+  "overall": {
+    "Lasso Regression": {
+      "mean_normalized_validation_MAE": 0.8513722305964223,
+      "targets_compared": 4,
+      "selection_basis": "Mean of each target's validation MAE divided by that target's validation standard deviation."
+    },
+    "Random Forest Regressor": {
+      "mean_normalized_validation_MAE": 0.8328340649006574,
+      "targets_compared": 4,
+      "selection_basis": "Mean of each target's validation MAE divided by that target's validation standard deviation."
+    },
+    "Gradient Boosting Regressor": {
+      "mean_normalized_validation_MAE": 0.897665135189508,
+      "targets_compared": 4,
+      "selection_basis": "Mean of each target's validation MAE divided by that target's validation standard deviation."
+    },
+    "XGBoost Regressor": {
+      "mean_normalized_validation_MAE": 0.7999380626594873,
+      "targets_compared": 4,
+      "selection_basis": "Mean of each target's validation MAE divided by that target's validation standard deviation."
+    }
+  },
+  "overall_best_algorithm": "XGBoost Regressor",
+  "target_best": {
+    "PH-S": {
+      "target": "PH-S",
+      "algorithm": "Lasso Regression",
+      "feature_set": "selected",
+      "validation_MAE": 0.0767050682501008,
+      "validation_RMSE": 0.10988410506164294,
+      "validation_R2": 0.33465426665564324,
+      "normalized_validation_MAE": 0.5657787463701109,
+      "heldout_test_MAE": 0.11747464118200796,
+      "heldout_test_RMSE": 0.14549201170938733,
+      "heldout_test_R2": 0.0684739608938314,
+      "selected_for_target": true
+    },
+    "DBO-S": {
+      "target": "DBO-S",
+      "algorithm": "Random Forest Regressor",
+      "feature_set": "selected",
+      "validation_MAE": 3.786107227434979,
+      "validation_RMSE": 5.084080604101125,
+      "validation_R2": -0.175162379978969,
+      "normalized_validation_MAE": 0.8019610168806706,
+      "heldout_test_MAE": 8.45267926617508,
+      "heldout_test_RMSE": 17.9491463205889,
+      "heldout_test_R2": -0.027024479075582475,
+      "selected_for_target": true
+    },
+    "DQO-S": {
+      "target": "DQO-S",
+      "algorithm": "Gradient Boosting Regressor",
+      "feature_set": "all",
+      "validation_MAE": 18.071736619523527,
+      "validation_RMSE": 23.109315882661647,
+      "validation_R2": 0.00923570465034429,
+      "normalized_validation_MAE": 0.773253347294293,
+      "heldout_test_MAE": 28.890945572798806,
+      "heldout_test_RMSE": 46.33635869414912,
+      "heldout_test_R2": 0.15004335982298866,
+      "selected_for_target": true
+    },
+    "SS-S": {
+      "target": "SS-S",
+      "algorithm": "XGBoost Regressor",
+      "feature_set": "all",
+      "validation_MAE": 6.29927396774292,
+      "validation_RMSE": 8.5080950788377,
+      "validation_R2": -0.26167882250927965,
+      "normalized_validation_MAE": 0.8262864490862181,
+      "heldout_test_MAE": 8.241215585153315,
+      "heldout_test_RMSE": 14.668011461218047,
+      "heldout_test_R2": -0.024345150958782424,
+      "selected_for_target": true
+    }
+  },
+  "interpretation": "Descriptive validation comparison only. Target MAEs are normalized by the chronological validation target standard deviation before averaging. No test metrics were used to select algorithms."
+}

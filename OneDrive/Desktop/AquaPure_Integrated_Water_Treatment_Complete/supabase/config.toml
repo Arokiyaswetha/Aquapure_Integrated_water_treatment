@@ -1,0 +1,4 @@
+project_id = "cneykpnrcrsezljtawaw"
+
+[functions.scada-feed]
+verify_jwt = false

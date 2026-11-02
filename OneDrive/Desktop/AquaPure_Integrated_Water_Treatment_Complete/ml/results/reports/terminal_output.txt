@@ -1,0 +1,283 @@
+==============================================================================
+AQUAPURE - AI-BASED WASTEWATER TREATMENT MONITORING AND DIGITAL TWIN SYSTEM
+Machine Learning | Anomaly Detection | Water Quality Prediction | Explainable AI
+==============================================================================
+
+1. DATASET INFORMATION
+------------------------------------------------------------------------------
+Source: UCI Water Treatment Plant (ID 106); records: 527; process variables: 22 inputs / 38 total numeric columns.
+Dates: 1990-01-01 to 1991-10-30 | duplicate records: 0 | missing numeric cells: 591
+[WARN] Dataset descriptions list conceptual date classes, not a verified explicit fault-label column.
+
+2. DATA PREPROCESSING
+------------------------------------------------------------------------------
+REAL rows retained; per-target chronological 70/15/15 split; median imputation and scaling fitted on training folds only.
+Target | Train rows | Validation rows | Held-out real test rows
+-------+------------+-----------------+------------------------
+PH-S   | 368        | 79              | 79                     
+DBO-S  | 352        | 76              | 76                     
+DQO-S  | 356        | 76              | 77                     
+SS-S   | 365        | 78              | 79                     
+Largest IQR outlier flags (inspection only): SED-D=41, SS-E=39, SS-P=39, SS-S=34, ZN-E=33
+Outliers are not clipped/dropped; valid excursions cannot be distinguished from errors here.
+Synthetic rows: 600 (all source-marked SYNTHETIC); exact duplicates: 0.
+Real/synthetic mean absolute correlation difference: 0.0354; near-real fraction under 0.05 standardized RMS distance: 1.7%.
+Synthetic data is excluded from training and not scored as verified ground truth.
+
+3. FEATURE SELECTION
+------------------------------------------------------------------------------
+PH-S: SelectKBest candidate set (10 inputs); final model used selected features.
+  SelectKBest candidates: PH-D, SSV-P, SSV-D, SSV-E, DBO-D, DBO-P, ZN-E, DQO-E, PH-P, PH-E
+  Final model inputs: PH-D, PH-E, DBO-D, PH-P, DQO-E, SSV-D, SSV-P, DBO-P, ZN-E, SSV-E
+  PH-D       MI=0.299 |r|=0.465 RF=0.297
+  PH-E       MI=0.115 |r|=0.324 RF=0.011
+  DBO-D      MI=0.104 |r|=0.205 RF=0.040
+  PH-P       MI=0.099 |r|=0.365 RF=0.018
+  DQO-E      MI=0.095 |r|=0.077 RF=0.022
+DBO-S: SelectKBest candidate set (10 inputs); final model used selected features.
+  SelectKBest candidates: DQO-D, DBO-D, DBO-E, SSV-E, DBO-P, SSV-D, COND-E, DQO-E, SS-D, COND-D
+  Final model inputs: DBO-D, DQO-D, DBO-E, DQO-E, COND-E, SSV-D, SS-D, DBO-P, SSV-E, COND-D
+  DBO-D      MI=0.223 |r|=0.166 RF=0.105
+  DQO-D      MI=0.205 |r|=0.195 RF=0.147
+  DBO-E      MI=0.131 |r|=0.136 RF=0.066
+  DQO-E      MI=0.101 |r|=0.078 RF=0.023
+  COND-E     MI=0.092 |r|=0.005 RF=0.023
+DQO-S: SelectKBest candidate set (10 inputs); final model used all features.
+  SelectKBest candidates: DQO-D, DQO-E, SSV-E, COND-P, Q-E, DBO-P, COND-E, PH-P, SED-P, COND-D
+  Final model inputs: Q-E, ZN-E, PH-E, DBO-E, DQO-E, SS-E, SSV-E, SED-E, COND-E, PH-P, DBO-P, SS-P, SSV-P, SED-P, COND-P, PH-D, DBO-D, DQO-D, SS-D, SSV-D, SED-D, COND-D
+  DQO-D      MI=0.165 |r|=0.450 RF=0.292
+  DQO-E      MI=0.111 |r|=0.293 RF=0.075
+  SED-P      MI=0.071 |r|=0.145 RF=0.020
+  COND-P     MI=0.070 |r|=0.158 RF=0.035
+  COND-D     MI=0.062 |r|=0.179 RF=0.020
+SS-S: SelectKBest candidate set (10 inputs); final model used all features.
+  SelectKBest candidates: SSV-P, DBO-D, COND-P, SSV-E, SS-E, COND-E, Q-E, DBO-P, PH-P, SED-D
+  Final model inputs: Q-E, ZN-E, PH-E, DBO-E, DQO-E, SS-E, SSV-E, SED-E, COND-E, PH-P, DBO-P, SS-P, SSV-P, SED-P, COND-P, PH-D, DBO-D, DQO-D, SS-D, SSV-D, SED-D, COND-D
+  COND-E     MI=0.077 |r|=0.009 RF=0.039
+  SSV-E      MI=0.061 |r|=0.016 RF=0.046
+  SSV-P      MI=0.043 |r|=0.005 RF=0.165
+  DBO-P      MI=0.035 |r|=0.021 RF=0.026
+  Q-E        MI=0.032 |r|=0.041 RF=0.028
+
+4. MODEL TRAINING AND COMPARISON
+------------------------------------------------------------------------------
+Target | Algorithm                   | Features | Val MAE | Val RMSE | Val R2 | NMAE   | Selected | Test MAE | Test RMSE | Test R2
+-------+-----------------------------+----------+---------+----------+--------+--------+----------+----------+-----------+--------
+PH-S   | Lasso Regression            | selected | 0.077   | 0.110    | 0.335  | 0.5658 | yes      | 0.117    | 0.145     | 0.068  
+PH-S   | Random Forest Regressor     | all      | 0.093   | 0.127    | 0.116  | 0.6884 | no       | -        | -         | -      
+PH-S   | Gradient Boosting Regressor | selected | 0.092   | 0.117    | 0.242  | 0.6797 | no       | -        | -         | -      
+PH-S   | XGBoost Regressor           | all      | 0.091   | 0.124    | 0.157  | 0.6740 | no       | -        | -         | -      
+DBO-S  | Lasso Regression            | selected | 4.840   | 6.006    | -0.640 | 1.0251 | no       | -        | -         | -      
+DBO-S  | Random Forest Regressor     | selected | 3.786   | 5.084    | -0.175 | 0.8020 | yes      | 8.453    | 17.949    | -0.027 
+DBO-S  | Gradient Boosting Regressor | all      | 5.661   | 10.994   | -4.495 | 1.1990 | no       | -        | -         | -      
+DBO-S  | XGBoost Regressor           | selected | 4.357   | 6.364    | -0.841 | 0.9229 | no       | -        | -         | -      
+DQO-S  | Lasso Regression            | selected | 19.311  | 23.889   | -0.059 | 0.8263 | no       | -        | -         | -      
+DQO-S  | Random Forest Regressor     | all      | 19.217  | 24.703   | -0.132 | 0.8223 | no       | -        | -         | -      
+DQO-S  | Gradient Boosting Regressor | all      | 18.072  | 23.109   | 0.009  | 0.7733 | yes      | 28.891   | 46.336    | 0.150  
+DQO-S  | XGBoost Regressor           | all      | 18.149  | 23.616   | -0.035 | 0.7765 | no       | -        | -         | -      
+SS-S   | Lasso Regression            | selected | 7.534   | 9.140    | -0.456 | 0.9883 | no       | -        | -         | -      
+SS-S   | Random Forest Regressor     | all      | 7.766   | 10.147   | -0.795 | 1.0187 | no       | -        | -         | -      
+SS-S   | Gradient Boosting Regressor | all      | 7.156   | 9.522    | -0.580 | 0.9387 | no       | -        | -         | -      
+SS-S   | XGBoost Regressor           | all      | 6.299   | 8.508    | -0.262 | 0.8263 | yes      | 8.241    | 14.668    | -0.024 
+Overall algorithm validation comparison | Mean normalized MAE (lower is better) | Targets
+----------------------------------------+---------------------------------------+--------
+Lasso Regression                        | 0.8514                                | 4      
+Random Forest Regressor                 | 0.8328                                | 4      
+Gradient Boosting Regressor             | 0.8977                                | 4      
+XGBoost Regressor                       | 0.7999                                | 4      
+Overall score: validation MAE divided by that target's chronological validation standard deviation, then averaged across four targets.
+Lowest observed mean normalized validation MAE: XGBoost Regressor (descriptive single split; no claim of universal or statistically significant superiority)
+Target | Chosen algorithm            | Feature set | Val MAE: all | Val MAE: selected | Test MAE | Test RMSE | Test R2 | Mean baseline R2
+-------+-----------------------------+-------------+--------------+-------------------+----------+-----------+---------+-----------------
+PH-S   | Lasso Regression            | selected    | 0.079        | 0.077             | 0.117    | 0.145     | 0.068   | -0.004          
+DBO-S  | Random Forest Regressor     | selected    | 4.606        | 3.786             | 8.453    | 17.949    | -0.027  | -0.003          
+DQO-S  | Gradient Boosting Regressor | all         | 18.072       | 19.311            | 28.891   | 46.336    | 0.150   | -0.001          
+SS-S   | XGBoost Regressor           | all         | 6.299        | 7.206             | 8.241    | 14.668    | -0.024  | -0.002          
+Compared Lasso, Random Forest, Gradient Boosting, and XGBoost on every target; both all-feature and training-fitted SelectKBest variants are visible above.
+Model selection used validation MAE; the final chronological real test segment was evaluated once after selection.
+Fit/baseline/chronological shift diagnostic (selection uses validation only):
+Target | Train MAE | Validation MAE | Mean-baseline Val MAE | Validation R2 | Val mean shift / train SD
+-------+-----------+----------------+-----------------------+---------------+--------------------------
+PH-S   | 0.106     | 0.077          | 0.096                 | 0.335         | -0.310                   
+DBO-S  | 3.854     | 3.786          | 4.715                 | -0.175        | -0.161                   
+DQO-S  | 17.243    | 18.072         | 20.531                | 0.009         | -0.294                   
+SS-S   | 4.933     | 6.299          | 7.442                 | -0.262        | -0.274                   
+
+5. ANOMALY DETECTION
+------------------------------------------------------------------------------
+Model            | Result                 | Anomaly score
+-----------------+------------------------+--------------
+Isolation Forest | within learned pattern | -0.1134      
+One-Class SVM    | within learned pattern | -0.3882      
+LOF              | within learned pattern | -0.5050      
+Algorithm        | Real validation flag rate | Synthetic flag rate | Rate shift | Mean flag agreement
+-----------------+---------------------------+---------------------+------------+--------------------
+Isolation Forest | 7.6%                      | 7.7%                | 0.07 pp    | 92.6%              
+One-Class SVM    | 17.7%                     | 14.2%               | 3.55 pp    | 90.3%              
+LOF              | 7.6%                      | 5.7%                | 1.93 pp    | 92.4%              
+All-model synthetic consensus: 22 | any-model union: 96
+Selected detector: Isolation Forest | Isolation Forest retained: validation and synthetic flag rates are not extreme, the rate shift is within 15 percentage points, and mean pairwise agreement is at least 70%. This supports only provisional stability/suitability, not fault accuracy.
+Agreement is consistency between model flags, not verified anomaly accuracy.
+Unusual input deviations (standard deviations from training medians):
+SED-E 1.41 SD, Q-E 1.18 SD, PH-P 0.88 SD, PH-E 0.84 SD, SED-P 0.73 SD
+Anomaly outputs are unsupervised pattern scores, not verified fault diagnoses.
+
+6. WATER QUALITY PREDICTION
+------------------------------------------------------------------------------
+Effluent target | Prediction | Configured demonstration range | Status     
+----------------+------------+--------------------------------+------------
+PH-S            | 7.696      | 6.000 to 9.000                 | within band
+DBO-S           | 17.241     | 0.000 to 25.000                | within band
+DQO-S           | 83.968     | 0.000 to 125.000               | within band
+SS-S            | 23.806     | 0.000 to 35.000                | within band
+UCI does not provide units for these measurements; configured bands are not permit limits.
+
+7. DIGITAL TWIN WHAT-IF SIMULATION
+------------------------------------------------------------------------------
+Scenario parameters are supported model inputs ranked by per-target normalized importance; source(s): SHAP mean absolute attribution
+Importance source by target: PH-S=SHAP mean absolute attribution | DBO-S=SHAP mean absolute attribution | DQO-S=SHAP mean absolute attribution | SS-S=SHAP mean absolute attribution
+Normalized quality distance is the mean per-target distance outside configured demonstration bands.
+Rank | Scenario     | Score  | Quality distance | Input adjustment | Status    
+-----+--------------+--------+------------------+------------------+-----------
+1    | current      | 0.0000 | 0.0000           | 0.0000           | acceptable
+2    | DQO-D lower  | 0.0049 | 0.0000           | 0.0977           | acceptable
+3    | DQO-D higher | 0.0049 | 0.0000           | 0.0977           | acceptable
+4    | ZN-E lower   | 0.0050 | 0.0000           | 0.0990           | acceptable
+5    | ZN-E higher  | 0.0050 | 0.0000           | 0.0990           | acceptable
+6    | DBO-P lower  | 0.0050 | 0.0000           | 0.0999           | acceptable
+7    | DBO-P higher | 0.0050 | 0.0000           | 0.0999           | acceptable
+8    | DBO-D lower  | 0.0050 | 0.0000           | 0.1000           | acceptable
+Scenario     | Changed feature | Input before -> after | PH-S delta | DBO-S delta | DQO-S delta | SS-S delta | Any prediction changed
+-------------+-----------------+-----------------------+------------+-------------+-------------+------------+-----------------------
+current      | -               | -                     | 0.00000    | 0.00000     | 0.00000     | 0.00000    | no                    
+DQO-D lower  | DQO-D           | 263.000 -> 232.080    | 0.00000    | -0.61338    | -6.82519    | -0.13622   | yes                   
+DQO-D higher | DQO-D           | 263.000 -> 293.920    | 0.00000    | 1.30029     | 0.26128     | 0.09705    | yes                   
+ZN-E lower   | ZN-E            | 1.600 -> 0.680        | 0.00500    | 0.00000     | 0.00000     | 0.95405    | yes                   
+ZN-E higher  | ZN-E            | 1.600 -> 2.520        | -0.00500   | 0.00000     | -1.23750    | -0.19530   | yes                   
+DBO-P lower  | DBO-P           | 182.000 -> 150.010    | 0.00000    | 1.19908     | 0.39527     | 0.87339    | yes                   
+DBO-P higher | DBO-P           | 182.000 -> 213.990    | 0.00000    | -0.77678    | 0.00000     | -0.10172   | yes                   
+DBO-D lower  | DBO-D           | 123.000 -> 107.290    | 0.00848    | -1.46071    | 0.06448     | -0.84168   | yes                   
+DBO-D higher | DBO-D           | 123.000 -> 138.710    | -0.00848   | -0.57230    | -1.47515    | 0.00000    | yes                   
+SSV-E lower  | SSV-E           | 70.100 -> 64.892      | 0.00000    | 0.04575     | 0.78309     | -0.15786   | yes                   
+SSV-E higher | SSV-E           | 70.100 -> 75.308      | 0.00000    | -0.08303    | -1.07245    | -1.16447   | yes                   
+SSV-D lower  | SSV-D           | 69.800 -> 65.374      | 0.00716    | -0.16522    | 0.00000     | 0.00000    | yes                   
+SSV-D higher | SSV-D           | 69.800 -> 74.226      | -0.00716   | 0.38823     | 0.00000     | 0.54884    | yes                   
+PH-D lower   | PH-D            | 7.800 -> 7.720        | -0.03939   | 0.00000     | 1.44398     | 0.42419    | yes                   
+PH-D higher  | PH-D            | 7.800 -> 7.880        | 0.03939    | 0.00000     | -0.77574    | 0.00000    | yes                   
+DBO-E lower  | DBO-E           | 172.000 -> 143.944    | 0.00000    | -0.37932    | 0.00000     | 0.00000    | yes                   
+DBO-E higher | DBO-E           | 172.000 -> 200.056    | 0.00000    | 1.63763     | 0.00000     | 1.12381    | yes                   
+BEST DIGITAL TWIN SCENARIO: current
+  No parameter change is preferred over the current condition.
+Target | Baseline prediction | Scenario prediction | Normalized band distance
+-------+---------------------+---------------------+-------------------------
+PH-S   | 7.696               | 7.696               | 0.00000                 
+DBO-S  | 17.241              | 17.241              | 0.00000                 
+DQO-S  | 83.968              | 83.968              | 0.00000                 
+SS-S   | 23.806              | 23.806              | 0.00000                 
+  Quality score: 0.0000 -> 0.0000
+[OK] Current prediction satisfies configured bands; no tested change improves the quality score, so smaller adjustment is preferred.
+Virtual changes are bounded to training input ranges; predictions are exploratory, not causal effects.
+
+8. SHAP EXPLAINABLE AI
+------------------------------------------------------------------------------
+Target | Explanation method | Individual SHAP explanation
+-------+--------------------+----------------------------
+PH-S   | SHAP               | yes                        
+DBO-S  | SHAP               | yes                        
+DQO-S  | SHAP               | yes                        
+SS-S   | SHAP               | yes                        
+Target | Top input feature | Contribution | Direction
+-------+-------------------+--------------+----------
+PH-S   | PH-D              | -0.0131      | negative 
+PH-S   | SSV-P             | -0.0057      | negative 
+PH-S   | ZN-E              | 0.0057       | positive 
+PH-S   | SSV-D             | 0.0030       | positive 
+PH-S   | DBO-D             | 0.0024       | positive 
+DBO-S  | DBO-D             | -0.9276      | negative 
+DBO-S  | SSV-D             | -0.6124      | negative 
+DBO-S  | DBO-P             | 0.5691       | positive 
+DBO-S  | DBO-E             | -0.5311      | negative 
+DBO-S  | DQO-E             | -0.3576      | negative 
+DQO-S  | DQO-D             | -3.4293      | negative 
+DQO-S  | DQO-E             | 1.9158       | positive 
+DQO-S  | DBO-E             | -1.4571      | negative 
+DQO-S  | SED-E             | -0.9214      | negative 
+DQO-S  | SSV-D             | -0.9079      | negative 
+SS-S   | SED-E             | 2.0609       | positive 
+SS-S   | SSV-P             | 1.8656       | positive 
+SS-S   | PH-D              | 1.3286       | positive 
+SS-S   | DBO-E             | -0.9954      | negative 
+SS-S   | DQO-D             | -0.8275      | negative 
+Global model importance (method is target-specific):
+Target | Input feature | Importance | Source                        
+-------+---------------+------------+-------------------------------
+PH-S   | PH-D          | 0.0789     | SHAP mean absolute attribution
+PH-S   | DBO-D         | 0.0145     | SHAP mean absolute attribution
+PH-S   | SSV-D         | 0.0122     | SHAP mean absolute attribution
+PH-S   | ZN-E          | 0.0098     | SHAP mean absolute attribution
+PH-S   | SSV-P         | 0.0092     | SHAP mean absolute attribution
+DBO-S  | DBO-D         | 2.7349     | SHAP mean absolute attribution
+DBO-S  | DQO-D         | 1.5999     | SHAP mean absolute attribution
+DBO-S  | DBO-P         | 0.9091     | SHAP mean absolute attribution
+DBO-S  | SSV-E         | 0.7336     | SHAP mean absolute attribution
+DBO-S  | DBO-E         | 0.7129     | SHAP mean absolute attribution
+DQO-S  | DQO-D         | 11.3877    | SHAP mean absolute attribution
+DQO-S  | COND-E        | 2.9501     | SHAP mean absolute attribution
+DQO-S  | COND-P        | 2.6095     | SHAP mean absolute attribution
+DQO-S  | DQO-E         | 2.4006     | SHAP mean absolute attribution
+DQO-S  | PH-D          | 2.1198     | SHAP mean absolute attribution
+SS-S   | PH-D          | 1.8278     | SHAP mean absolute attribution
+SS-S   | DBO-D         | 1.6322     | SHAP mean absolute attribution
+SS-S   | DBO-E         | 1.5649     | SHAP mean absolute attribution
+SS-S   | DQO-D         | 1.4448     | SHAP mean absolute attribution
+SS-S   | ZN-E          | 1.1203     | SHAP mean absolute attribution
+[OK] 4/4 targets explained with SHAP; saved 8 plot(s) or labelled fallback importance charts under results/plots/shap.
+SHAP explains model behavior; it does not prove causation or a plant fault.
+
+9. OPERATOR RECOMMENDATION
+------------------------------------------------------------------------------
+DETECTED CONDITION: No model flag for unusual input pattern
+PREDICTED WATER QUALITY: PH-S=7.696 | DBO-S=17.241 | DQO-S=83.968 | SS-S=23.806
+IMPORTANT PARAMETERS: SED-E, Q-E, PH-P, PH-E, SED-P
+SHAP EXPLANATION: PH-S: PH-D -0.013, SSV-P -0.006, ZN-E +0.006; DBO-S: DBO-D -0.928, SSV-D -0.612, DBO-P +0.569; DQO-S: DQO-D -3.429, DQO-E +1.916, DBO-E -1.457; SS-S: SED-E +2.061, SSV-P +1.866, PH-D +1.329
+DIGITAL TWIN FINDING: No tested scenario improved the configured quality score; current condition is acceptable within demo bands.
+POSSIBLE OPERATOR ACTION: Review the displayed process measurements and relevant treatment stage against plant procedures; confirm any action with an authorized operator.
+VALIDATION NOTE: Demonstration target bands and historical single-plant models require plant-specific expert review.
+
+10. PER-RECORD AND AGGREGATE SYNTHETIC OPERATOR REVIEW
+------------------------------------------------------------------------------
+Review triggers: 170/600; no configured trigger: 430.
+Trigger counts are rule/anomaly flags, not verified faults or accuracy.
+Outside configured demonstration bands: PH-S=0/600, DBO-S=88/600, DQO-S=24/600, SS-S=19/600
+Record   | Scenario           | Anomaly votes | Input evidence                                                                                                             | Prediction trigger                                 | Recommendation                                                                                                                                                                                 
+---------+--------------------+---------------+----------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SYN-0002 | normal             | 2             | Q-E=5.716e+04 (2.94 SD from train median); SSV-D=44.96 (2.69 SD from train median); PH-E=7.264 (2.66 SD from train median) | none                                               | Review this synthetic case against plant procedures; confirm measurements and prediction before any action. Trigger: 2/3 unsupervised input-pattern detectors flagged the record. Largest inpu�
+SYN-0003 | high_organic       | 2             | ZN-E=12.59 (4.68 SD from train median); DBO-P=417.2 (2.85 SD from train median); DBO-D=213.3 (2.30 SD from train median)   | none                                               | Review this synthetic case against plant procedures; confirm measurements and prediction before any action. Trigger: 2/3 unsupervised input-pattern detectors flagged the record. Largest inpu�
+SYN-0005 | reduced_efficiency | 3             | SED-D=2.5 (5.51 SD from train median); SS-D=218.7 (4.99 SD from train median); SS-P=566.6 (2.69 SD from train median)      | predicted DBO-S=33.72 outside configured demo band | Review this synthetic case against plant procedures; confirm measurements and prediction before any action. Trigger: 3/3 unsupervised input-pattern detectors flagged the record; predicted DB�
+SYN-0011 | normal             | 1             | SS-P=579.7 (2.79 SD from train median); DQO-E=712.5 (2.52 SD from train median); SED-E=9.82 (2.50 SD from train median)    | none                                               | Review this synthetic case against plant procedures; confirm measurements and prediction before any action. Trigger: 1/3 unsupervised input-pattern detectors flagged the record. Largest inpu�
+SYN-0001 | flow_shift         | 0             | SSV-D=93.86 (1.86 SD from train median); Q-E=4.79e+04 (1.55 SD from train median); DQO-E=514.6 (0.91 SD from train median) | none                                               | No configured demonstration-rule review trigger; maintain routine operator oversight. This is not a safety clearance.                                                                          
+Module                  | Best selected algorithm     | Feature set  | Val MAE | Val RMSE | Val R2 | Test MAE | Test RMSE | Test R2 | Selection criteria                                                                                                                                                                                                                                   
+------------------------+-----------------------------+--------------+---------+----------+--------+----------+-----------+---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+PH-S                    | Lasso Regression            | selected     | 0.077   | 0.110    | 0.335  | 0.117    | 0.145     | 0.068   | Validation MAE; test evaluated once after selection                                                                                                                                                                                                  
+DBO-S                   | Random Forest Regressor     | selected     | 3.786   | 5.084    | -0.175 | 8.453    | 17.949    | -0.027  | Validation MAE; test evaluated once after selection                                                                                                                                                                                                  
+DQO-S                   | Gradient Boosting Regressor | all          | 18.072  | 23.109   | 0.009  | 28.891   | 46.336    | 0.150   | Validation MAE; test evaluated once after selection                                                                                                                                                                                                  
+SS-S                    | XGBoost Regressor           | all          | 6.299   | 8.508    | -0.262 | 8.241    | 14.668    | -0.024  | Validation MAE; test evaluated once after selection                                                                                                                                                                                                  
+Anomaly Detection       | Isolation Forest            | unsupervised | -       | -        | -      | -        | -         | -       | Isolation Forest retained: validation and synthetic flag rates are not extreme, the rate shift is within 15 percentage points, and mean pairwise agreement is at least 70%. This supports only provisional stability/suitability, not fault accuracy.
+Operator Recommendation | Rule-based operator review  | rules        | -       | -        | -      | -        | -         | -       | No verified action labels; no supervised classifier                                                                                                                                                                                                  
+
+11. FINAL ALGORITHM AND MODULE SUMMARY
+------------------------------------------------------------------------------
+Target | Best algorithm              | Val MAE | Val RMSE | Val R2 | Test MAE | Test RMSE | Test R2
+-------+-----------------------------+---------+----------+--------+----------+-----------+--------
+PH-S   | Lasso Regression            | 0.077   | 0.110    | 0.335  | 0.117    | 0.145     | 0.068  
+DBO-S  | Random Forest Regressor     | 3.786   | 5.084    | -0.175 | 8.453    | 17.949    | -0.027 
+DQO-S  | Gradient Boosting Regressor | 18.072  | 23.109   | 0.009  | 28.891   | 46.336    | 0.150  
+SS-S   | XGBoost Regressor           | 6.299   | 8.508    | -0.262 | 8.241    | 14.668    | -0.024 
+Lowest observed overall mean normalized validation MAE: XGBoost Regressor | descriptive single split; statistical superiority not established
+Anomaly model: Isolation Forest | agreement is not accuracy
+Recommendation module: cautious per-record rule review + aggregate synthetic summary
+SHAP methods: PH-S=SHAP; DBO-S=SHAP; DQO-S=SHAP; SS-S=SHAP
+Digital Twin: best scenario current | changed prediction scenarios: 16 / 16
+Limitations: 527 historical records, missing values, single-plant chronological shift; no verified fault/action labels; synthetic outcomes have no ground truth; demonstration bands are not regulatory limits.
+
+Reports saved under results/reports/; models saved under models/; comparison plots under results/plots/.

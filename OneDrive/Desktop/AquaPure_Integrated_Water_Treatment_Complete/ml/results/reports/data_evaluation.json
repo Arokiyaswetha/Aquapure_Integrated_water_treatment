@@ -1,0 +1,78 @@
+{
+  "real_records": 527,
+  "synthetic_records": 600,
+  "all_synthetic_marked_synthetic": true,
+  "synthetic_missing_measurements": 0,
+  "synthetic_exact_duplicate_measurement_rows": 0,
+  "normalized_nearest_real_record_distance": {
+    "minimum": 0.042355653579325324,
+    "median": 0.12091170124134154,
+    "p90": 0.2915651528761161,
+    "fraction_below_0.05": 0.016666666666666666,
+    "distance_definition": "Euclidean distance after real-feature standardization, divided by sqrt(38)."
+  },
+  "correlation_comparison": {
+    "mean_absolute_pair_difference": 0.03544298746838479,
+    "maximum_absolute_pair_difference": 0.1878003472311354
+  },
+  "synthetic_predictive_metrics": null,
+  "synthetic_metric_limitation": "Synthetic outcomes are generated and have no verified ground truth; no accuracy metric is reported against them.",
+  "stage_ordering_proxies": {
+    "DBO-E to DBO-P": {
+      "real_fraction_second_greater": 0.635673624288425,
+      "synthetic_fraction_second_greater": 0.65
+    },
+    "DBO-P to DBO-D": {
+      "real_fraction_second_greater": 0.018975332068311195,
+      "synthetic_fraction_second_greater": 0.016666666666666666
+    },
+    "DBO-D to DBO-S": {
+      "real_fraction_second_greater": 0.003795066413662239,
+      "synthetic_fraction_second_greater": 0.0016666666666666668
+    },
+    "SS-E to SS-P": {
+      "real_fraction_second_greater": 0.7096774193548387,
+      "synthetic_fraction_second_greater": 0.7016666666666667
+    },
+    "SS-P to SS-D": {
+      "real_fraction_second_greater": 0.0,
+      "synthetic_fraction_second_greater": 0.0
+    },
+    "SS-D to SS-S": {
+      "real_fraction_second_greater": 0.007590132827324478,
+      "synthetic_fraction_second_greater": 0.01
+    },
+    "DQO-E to DQO-D": {
+      "real_fraction_second_greater": 0.022770398481973434,
+      "synthetic_fraction_second_greater": 0.028333333333333332
+    },
+    "DQO-D to DQO-S": {
+      "real_fraction_second_greater": 0.003795066413662239,
+      "synthetic_fraction_second_greater": 0.0016666666666666668
+    }
+  },
+  "interpretation": "Stage ordering is a descriptive comparison with observed records, not a universal physical law. Distribution and correlation similarity do not validate the synthetic observations as ground truth.",
+  "real_heldout_regression_metrics": {
+    "PH-S": {
+      "MAE": 0.11747464118200796,
+      "RMSE": 0.14549201170938733,
+      "R2": 0.0684739608938314
+    },
+    "DBO-S": {
+      "MAE": 8.45267926617508,
+      "RMSE": 17.9491463205889,
+      "R2": -0.027024479075582475
+    },
+    "DQO-S": {
+      "MAE": 28.890945572798806,
+      "RMSE": 46.33635869414912,
+      "R2": 0.15004335982298866
+    },
+    "SS-S": {
+      "MAE": 8.241215585153315,
+      "RMSE": 14.668011461218047,
+      "R2": -0.024345150958782424
+    }
+  },
+  "real_evaluation_method": "Chronological 70% train / 15% validation / 15% held-out test; synthetic records excluded from fitting."
+}

@@ -1,0 +1,17 @@
+AQUAPURE FINAL EXECUTION SUMMARY
+REAL records: 527
+SYNTHETIC records: 600 (separate; not used to train models)
+Real held-out test metrics:
+PH-S: Lasso Regression | MAE=0.1175 RMSE=0.1455 R2=0.0685
+DBO-S: Random Forest Regressor | MAE=8.4527 RMSE=17.9491 R2=-0.0270
+DQO-S: Gradient Boosting Regressor | MAE=28.8909 RMSE=46.3364 R2=0.1500
+SS-S: XGBoost Regressor | MAE=8.2412 RMSE=14.6680 R2=-0.0243
+No verified supervised anomaly labels were used.
+Digital Twin scores are exploratory observational model comparisons, not causal intervention estimates.
+Demonstration target ranges are not regulatory or plant-approved limits.
+Synthetic prediction rows saved: 600 (synthetic only; no ground-truth test metrics).
+Selected anomaly detector: Isolation Forest; flags/agreement are not accuracy.
+Best recommendation approach: cautious rule-based operator review; no verified action labels.
+See best_model_summary.txt for the final model selection table.
+SHAP availability and selected model methods: {"PH-S": {"method": "SHAP", "individual_explanation": true}, "DBO-S": {"method": "SHAP", "individual_explanation": true}, "DQO-S": {"method": "SHAP", "individual_explanation": true}, "SS-S": {"method": "SHAP", "individual_explanation": true}}
+Individual synthetic recommendations for all records are in synthetic_operator_recommendations.csv; aggregate counts are in synthetic_operator_recommendations_aggregate.json.

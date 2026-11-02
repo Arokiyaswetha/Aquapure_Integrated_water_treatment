@@ -1,0 +1,14 @@
+AQUAPURE BEST MODEL SUMMARY
+Regression candidates selected independently per target by validation MAE.
+PH-S: Lasso Regression (selected features) | train MAE=0.1064, R2=0.3304 | validation MAE=0.0767, RMSE=0.1099, R2=0.3347 | train-to-validation MAE gap=-0.0297, R2 gap=-0.0043 | held-out real test MAE=0.1175, RMSE=0.1455, R2=0.0685
+DBO-S: Random Forest Regressor (selected features) | train MAE=3.8541, R2=0.5321 | validation MAE=3.7861, RMSE=5.0841, R2=-0.1752 | train-to-validation MAE gap=-0.0680, R2 gap=0.7072 | held-out real test MAE=8.4527, RMSE=17.9491, R2=-0.0270
+DQO-S: Gradient Boosting Regressor (all features) | train MAE=17.2434, R2=0.6070 | validation MAE=18.0717, RMSE=23.1093, R2=0.0092 | train-to-validation MAE gap=0.8283, R2 gap=0.5978 | held-out real test MAE=28.8909, RMSE=46.3364, R2=0.1500
+SS-S: XGBoost Regressor (all features) | train MAE=4.9332, R2=0.8067 | validation MAE=6.2993, RMSE=8.5081, R2=-0.2617 | train-to-validation MAE gap=1.3661, R2 gap=1.0683 | held-out real test MAE=8.2412, RMSE=14.6680, R2=-0.0243
+Lowest observed overall normalized validation MAE: XGBoost Regressor (descriptive single split; not a claim of universal/statistical superiority).
+Anomaly selection: Isolation Forest; no verified fault labels; agreement is not accuracy.
+Recommendation selection: cautious rule-based operator review; no verified operator-action labels.
+Digital Twin best scenario: current | score=0.0000 | quality distance=0.0000
+Digital Twin predictions changed in 16 of 16 perturbed scenarios; see per-target deltas in digital_twin_scenarios.csv.
+SHAP target methods: PH-S=SHAP; DBO-S=SHAP; DQO-S=SHAP; SS-S=SHAP
+Metrics may be weak or negative; chronological held-out results are reported as observed, without accuracy guarantees.
+Fit diagnostic: compare training and validation metrics; a large train/validation gap suggests possible overfit, while weak training and validation scores suggest low signal or underfit. These diagnostics are not proof of cause.

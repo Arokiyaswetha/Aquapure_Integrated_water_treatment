@@ -1,0 +1,47 @@
+AQUAPURE DATASET SUMMARY
+Source: UCI Water Treatment Plant, dataset ID 106
+Real records: 527
+Numeric measurements: 38
+Date range: 1990-01-01 to 1991-10-30
+Duplicate full records: 0
+Missing numeric cells: 591
+
+Column details:
+Q-E: Input flow to plant; dtype=float64; missing=18
+ZN-E: Input zinc to plant; dtype=float64; missing=3
+PH-E: Input pH to plant; dtype=float64; missing=0
+DBO-E: Input biological oxygen demand; dtype=float64; missing=23
+DQO-E: Input chemical oxygen demand; dtype=float64; missing=6
+SS-E: Input suspended solids; dtype=float64; missing=1
+SSV-E: Input volatile suspended solids; dtype=float64; missing=11
+SED-E: Input sediments; dtype=float64; missing=25
+COND-E: Input conductivity; dtype=int64; missing=0
+PH-P: Primary settler pH; dtype=float64; missing=0
+DBO-P: Primary settler biological oxygen demand; dtype=float64; missing=40
+SS-P: Primary settler suspended solids; dtype=int64; missing=0
+SSV-P: Primary settler volatile suspended solids; dtype=float64; missing=11
+SED-P: Primary settler sediments; dtype=float64; missing=24
+COND-P: Primary settler conductivity; dtype=int64; missing=0
+PH-D: Secondary settler pH; dtype=float64; missing=0
+DBO-D: Secondary settler biological oxygen demand; dtype=float64; missing=28
+DQO-D: Secondary settler chemical oxygen demand; dtype=float64; missing=9
+SS-D: Secondary settler suspended solids; dtype=float64; missing=2
+SSV-D: Secondary settler volatile suspended solids; dtype=float64; missing=13
+SED-D: Secondary settler sediments; dtype=float64; missing=25
+COND-D: Secondary settler conductivity; dtype=int64; missing=0
+PH-S: Final effluent pH; dtype=float64; missing=1
+DBO-S: Final effluent biological oxygen demand; dtype=float64; missing=23
+DQO-S: Final effluent chemical oxygen demand; dtype=float64; missing=18
+SS-S: Final effluent suspended solids; dtype=float64; missing=5
+SSV-S: Final effluent volatile suspended solids; dtype=float64; missing=17
+SED-S: Final effluent sediments; dtype=float64; missing=28
+COND-S: Final effluent conductivity; dtype=float64; missing=1
+RD-DBO-P: Primary-stage BOD performance; dtype=float64; missing=62
+RD-SS-P: Primary-stage suspended-solids performance; dtype=float64; missing=4
+RD-SED-P: Primary-stage sediment performance; dtype=float64; missing=27
+RD-DBO-S: Secondary-stage BOD performance; dtype=float64; missing=40
+RD-DQO-S: Secondary-stage COD performance; dtype=float64; missing=26
+RD-DBO-G: Global BOD performance; dtype=float64; missing=36
+RD-DQO-G: Global COD performance; dtype=float64; missing=25
+RD-SS-G: Global suspended-solids performance; dtype=float64; missing=8
+RD-SED-G: Global sediment performance; dtype=float64; missing=31

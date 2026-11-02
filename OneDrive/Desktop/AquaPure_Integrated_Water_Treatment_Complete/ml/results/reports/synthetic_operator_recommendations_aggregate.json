@@ -1,0 +1,18 @@
+{
+  "records": 600,
+  "review_triggered": 170,
+  "no_trigger": 430,
+  "anomaly_vote_count_distribution": {
+    "0": 504,
+    "1": 49,
+    "2": 25,
+    "3": 22
+  },
+  "outside_demo_band_record_counts": {
+    "PH-S": 0,
+    "DBO-S": 88,
+    "DQO-S": 24,
+    "SS-S": 19
+  },
+  "interpretation": "Counts describe the synthetic simulation and configured review rules only. They are not fault accuracy, verified diagnoses, or treatment instructions."
+}
